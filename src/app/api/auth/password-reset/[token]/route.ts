@@ -7,7 +7,7 @@ const validateTokenSchema = z.object({
   token: z.string().min(1, 'Reset token is required'),
 })
 
-async function validateTokenHandler(request: Request, { params }: { params: { token: string } }) {
+async function validateTokenHandler(request: Request, { params }: { params: Promise<{ token: string }> }) {
   try {
     const { token } = await params
 
