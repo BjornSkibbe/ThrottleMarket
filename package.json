@@ -17,6 +17,7 @@
     "seed": "tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.11.2",
     "@prisma/client": "^6.2.1",
     "@radix-ui/react-toast": "^1.2.15",
     "@tanstack/react-query": "^5.100.11",

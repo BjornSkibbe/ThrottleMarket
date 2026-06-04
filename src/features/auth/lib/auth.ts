@@ -1,12 +1,15 @@
 import NextAuth from "next-auth"
+import { PrismaAdapter } from "@auth/prisma-adapter"
+import { prisma } from "@/lib/prisma"
 import Credentials from "next-auth/providers/credentials"
-
-// NOTE: prisma and bcryptjs are imported INSIDE the authorize callback
-// rather than at the top level. This ensures the auth config remains
-// Edge Runtime compatible for use in Next.js middleware.
+import Google from "next-auth/providers/google"
+import GitHub from "next-auth/providers/github"
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  adapter: PrismaAdapter(prisma),
   providers: [
+    Google,
+    GitHub,
     Credentials({
       credentials: {
         email: { label: "Email", type: "email" },
@@ -54,9 +57,13 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       }
       return session
     },
-    async jwt({ token, user }) {
+    async jwt({ token, user, account }) {
       if (user) {
         token.sub = user.id
+      }
+      // Persist OAuth access token to the token for API calls if needed
+      if (account) {
+        token.accessToken = account.access_token
       }
       return token
     }

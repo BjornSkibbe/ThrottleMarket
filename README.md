@@ -167,10 +167,10 @@ These items were listed as future enhancements and are now fully built:
 - ✅ **Delete Listing** — Confirmation flow with optimistic removal and rollback
 - ✅ **Pagination** — Server-side pagination with page/limit across listings and messages
 - ✅ **Advanced Search & Filters** — Category, brand, type, price, location, condition with database-level aggregation
+- ✅ **OAuth Providers** — Google and GitHub sign-in via NextAuth.js (configure credentials in Vercel dashboard)
 
 ## Coming Soon
 
-- [ ] **OAuth Providers** — Google and GitHub sign-in via NextAuth.js (schemas ready, needs OAuth app credentials)
 - [ ] **Seller Ratings & Reviews** — Post-transaction review system for buyers
 
 ## What I Learned Building ThrottleMarket
