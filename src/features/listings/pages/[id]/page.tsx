@@ -75,7 +75,7 @@ export default async function ListingDetailPage({ params }: ListingDetailPagePro
           /> 
         </div>
         
-        <div className="flex flex-col justify-center gap-12 lg:px-12 lg:min-h-[calc(100vh-64px)]">
+        <div className="flex flex-col justify-center gap-12 lg:px-12 lg:min-h-[calc(100vh-64px)] py-8">
           {/* ListingDetailsSingle COMPONENT */}
           <ListingDetailsSingle
             condition={listing.condition}
