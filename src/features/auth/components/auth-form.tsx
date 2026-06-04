@@ -238,6 +238,14 @@ export function AuthForm({ mode }: AuthFormProps) {
               {config.footerLinkText}
             </Link>
           </p>
+          {!isSignUp && (
+            <Link 
+              href="/auth/reset-password" 
+              className="text-sm text-primary hover:underline text-center"
+            >
+              Forgot your password?
+            </Link>
+          )}
         </CardFooter>
       </form>
     </Card>

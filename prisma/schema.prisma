@@ -26,6 +26,7 @@ model User {
   sentMessages             Message[]                 @relation("MessageSender")
   recentlyViewed           RecentlyViewed[]
   sessions                 Session[]
+  passwordResetTokens      PasswordResetToken[]
 }
 
 model Account {
@@ -381,4 +382,16 @@ enum Size {
   EU45_UK10
   EU46_UK11
   EU47_UK12
+}
+
+model PasswordResetToken {
+  id        String   @id @default(cuid())
+  token     String   @unique(map: "PasswordResetToken_token_key")
+  userId    String
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+  isUsed    Boolean  @default(false)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([token], map: "PasswordResetToken_token_unique")
 }
