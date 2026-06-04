@@ -101,8 +101,8 @@ export function PasswordResetForm({ token }: { token: string }) {
       <Card className="flex max-w-lg mx-auto w-full p-6 space-y-6 bg-card">
         <CardHeader className="space-y-2 text-center">
           <div className="flex justify-center">
-            <div className="p-3 rounded-full bg-destructive/10">
-              <Motorbike className="h-8 w-8 text-destructive" />
+            <div className="p-3 rounded-full bg-accent/10">
+              <Motorbike className="h-8 w-8 text-accent" />
             </div>
           </div>
           <CardTitle className="text-2xl font-bold">Invalid Link</CardTitle>
@@ -187,7 +187,7 @@ export function PasswordResetForm({ token }: { token: string }) {
             />
           </div>
           {error && (
-            <p className="text-sm text-destructive">{error}</p>
+            <p className="text-sm text-accent">{error}</p>
           )}
         </CardContent>
         <CardFooter className="flex flex-col space-y-2">

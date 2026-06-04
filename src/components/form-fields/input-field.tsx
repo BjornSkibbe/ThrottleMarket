@@ -43,7 +43,7 @@ export function InputField({
     <div className="space-y-3">
       <Label htmlFor={id}>
         {label}
-        {required && <span className="text-destructive ml-1">*</span>}
+        {required && <span className="text-accent ml-1">*</span>}
       </Label>
       <Input
         id={id}

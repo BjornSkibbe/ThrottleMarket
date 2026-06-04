@@ -100,7 +100,7 @@ export function PasswordResetRequest() {
             />
           </div>
           {error && (
-            <p className="text-sm text-destructive">{error}</p>
+            <p className="text-sm text-accent">{error}</p>
           )}
         </CardContent>
         <CardFooter className="flex flex-col space-y-6 bg-transparent w-full px-0 py-6 border-none">

@@ -140,7 +140,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       <form onSubmit={handleSubmit} noValidate>
         <CardContent className="space-y-4">
           {error && (
-            <div className="p-3 text-sm text-destructive bg-destructive/10 rounded-md" role="alert">
+            <div className="p-3 text-sm text-accent bg-accent/10 rounded-md" role="alert">
               {error}
             </div>
           )}
@@ -159,7 +159,7 @@ export function AuthForm({ mode }: AuthFormProps) {
                 aria-describedby={fieldErrors.name ? 'name-error' : undefined}
               />
               {fieldErrors.name && (
-                <p id="name-error" className="text-sm text-destructive">
+                <p id="name-error" className="text-sm text-accent">
                   {fieldErrors.name}
                 </p>
               )}
@@ -179,7 +179,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               aria-describedby={fieldErrors.email ? 'email-error' : undefined}
             />
             {fieldErrors.email && (
-              <p id="email-error" className="text-sm text-destructive">
+              <p id="email-error" className="text-sm text-accent">
                 {fieldErrors.email}
               </p>
             )}
@@ -199,7 +199,7 @@ export function AuthForm({ mode }: AuthFormProps) {
               aria-describedby={fieldErrors.password ? 'password-error' : undefined}
             />
             {fieldErrors.password && (
-              <p id="password-error" className="text-sm text-destructive">
+              <p id="password-error" className="text-sm text-accent">
                 {fieldErrors.password}
               </p>
             )}
@@ -220,7 +220,7 @@ export function AuthForm({ mode }: AuthFormProps) {
                 aria-describedby={fieldErrors.confirmPassword ? 'confirm-password-error' : undefined}
               />
               {fieldErrors.confirmPassword && (
-                <p id="confirm-password-error" className="text-sm text-destructive">
+                <p id="confirm-password-error" className="text-sm text-accent">
                   {fieldErrors.confirmPassword}
                 </p>
               )}

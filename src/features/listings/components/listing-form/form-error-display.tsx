@@ -21,12 +21,12 @@ export function FormErrorDisplay({ error, validationErrors }: FormErrorDisplayPr
   return (
     <>
       {error && (
-        <div className="p-3 text-sm text-destructive bg-destructive/10 rounded-md">
+        <div className="p-3 text-sm text-accent bg-accent/10 rounded-md">
           {error}
         </div>
       )}
       {validationErrors && (
-        <div className="p-3 text-sm text-destructive bg-destructive/10 rounded-md">
+        <div className="p-3 text-sm text-accent bg-accent/10 rounded-md">
           <ul className="list-disc list-inside">
             {validationErrors.issues.map((err) => (
               <li key={err.path?.join('.') || err.message}>{err.message}</li>
