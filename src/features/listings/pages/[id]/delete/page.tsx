@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { useRouter, useParams } from "next/navigation"
-import { auth } from "@/features/auth/lib/auth"
 import { useDeleteListing } from "@/features/listings/hooks/use-delete-listing"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
@@ -20,14 +19,8 @@ export default function DeleteListingPage() {
 
   const handleDelete = async () => {
     try {
-      const session = await auth()
-      if (!session?.user?.id) {
-        router.push("/auth/signin")
-        return
-      }
-
       await deleteListing.mutateAsync(listingId)
-      router.push("/dashboard")
+      router.push("/marketplace-dashboard")
     } catch (error: unknown) {
       const message = error instanceof Error ? error.message : "An error occurred"
       setError(message)
@@ -75,7 +68,7 @@ export default function DeleteListingPage() {
               variant="secondary"
               onClick={() => router.back()}
               disabled={deleteListing.isPending}
-              className="flex-1 italic tracking-tight"
+              className="flex-1 tracking-tight"
             >
               <X/>Cancel
             </Button>
@@ -84,7 +77,7 @@ export default function DeleteListingPage() {
               variant="default"
               onClick={handleDelete}
               disabled={deleteListing.isPending}
-              className="flex-1 italic tracking-tight"
+              className="flex-1 tracking-tight"
             >
               <Check />{deleteListing.isPending ? "Deleting..." : "Delete Listing"}
             </Button>

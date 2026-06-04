@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
 import { requireAuth } from "@/lib/middleware/auth"
-import { withCSRFProtection } from "@/lib/middleware/csrf"
 import { withRateLimit, RateLimitPresets } from "@/lib/middleware/rate-limit"
 import { getValidatedBody } from "@/lib/validation/middleware"
 import { logErrorWithStrategy } from "@/lib/logger/server"
@@ -71,7 +70,7 @@ async function createListingHandler(request: Request) {
   }
 }
 
-export const POST = withRateLimit(RateLimitPresets.API, withCSRFProtection(createListingHandler))
+export const POST = withRateLimit(RateLimitPresets.API, createListingHandler)
 
 export async function GET(request: Request) {
   try {

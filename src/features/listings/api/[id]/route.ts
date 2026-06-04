@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from "next/server"
 import { requireAuth } from "@/lib/middleware/auth"
-import { withCSRFProtection } from "@/lib/middleware/csrf"
 import { withRateLimit, RateLimitPresets } from "@/lib/middleware/rate-limit"
 import { getValidatedBody } from "@/lib/validation/middleware"
 import { updateListingSchema } from "@/features/listings/lib/listing.schema"
@@ -94,7 +93,7 @@ async function updateListingHandler(request: Request, { params }: { params: Prom
   }
 }
 
-export const PATCH = withRateLimit(RateLimitPresets.API, withCSRFProtection(updateListingHandler))
+export const PATCH = withRateLimit(RateLimitPresets.API, updateListingHandler)
 
 async function deleteListingHandler(request: Request, { params }: { params: Promise<{ id: string }> }) {
   const { id } = await params
@@ -124,4 +123,4 @@ async function deleteListingHandler(request: Request, { params }: { params: Prom
   }
 }
 
-export const DELETE = withRateLimit(RateLimitPresets.API, withCSRFProtection(deleteListingHandler))
+export const DELETE = withRateLimit(RateLimitPresets.API, deleteListingHandler)

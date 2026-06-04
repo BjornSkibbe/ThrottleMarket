@@ -6,7 +6,7 @@ import { ConversationItem } from './conversation-item'
 import { DeleteConversationDialog } from './delete-conversation-dialog'
 import { Skeleton } from '@/components/ui/skeleton'
 import { EmptyState } from '@/components/empty-state'
-import { Frown, MessageCircle, MessageCircleMore } from 'lucide-react'
+import { Frown, MessageCircle, MessageCircleMore, Store } from 'lucide-react'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
 import { useSidebar } from '@/components/ui/sidebar'
@@ -66,7 +66,7 @@ export function ConversationList({ selectedConversationId, onSelectConversation 
         description="Start a conversation by messaging a seller"
         action={
           <Link href="/marketplace">
-            <Button size="lg">Browse Marketplace</Button>
+            <Button size="lg"><Store /> Browse Marketplace</Button>
           </Link>
         }
       />
