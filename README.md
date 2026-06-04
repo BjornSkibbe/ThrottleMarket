@@ -167,7 +167,7 @@ These items were listed as future enhancements and are now fully built:
 - ✅ **Delete Listing** — Confirmation flow with optimistic removal and rollback
 - ✅ **Pagination** — Server-side pagination with page/limit across listings and messages
 - ✅ **Advanced Search & Filters** — Category, brand, type, price, location, condition with database-level aggregation
-- ✅ **OAuth Providers** — Google and GitHub sign-in via NextAuth.js (configure credentials in Vercel dashboard)
+- ✅ **OAuth Providers** — GitHub sign-in works for all users. Google is configured but in Google Testing mode (contact me to be added as a test user). Credentials managed via Vercel dashboard.
 
 ## Coming Soon
 
