@@ -46,18 +46,18 @@ export default async function Home() {
       <section className="relative py-24 md:py-48 px-3 sm:px-6">
         <div className="absolute inset-0 z-0">
           <img
-            src="/hero-images/hero3.jpg"
+            src="/hero-images/hero4.jpg"
             alt="Motorcycle hero"
             className="w-full h-full object-cover opacity-50"
           />
         </div>
         <div className="container mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary italic">
-              Find Your <span className="text-accent block text-7xl">Perfect Ride</span>
+            <h1 className="text-4xl sm:text-6xl font-bold tracking-tighter text-primary italic">
+              Find It. <span className="text-accent">Ride It.</span> Love It.
             </h1>
             <p className="text-sm text-primary/90 max-w-2xl mx-auto tracking-wide">
-              The premium marketplace for motorcycles and riding gear. Buy and sell with confidence.
+              Browse motorcycles and gear from fellow riders and start your next journey today.
             </p>
             <div className="flex flex-col gap-4 justify-center pt-6 w-full max-w-sm mx-auto">
               <Link href="/marketplace" className="w-full">
