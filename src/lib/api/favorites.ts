@@ -22,7 +22,7 @@ export async function fetchUserFavorites(): Promise<string[]> {
     })
 
     return response.data.listingIds
-  } catch (error) {
+  } catch {
     // Return empty array for any error to prevent undefined
     return []
   }

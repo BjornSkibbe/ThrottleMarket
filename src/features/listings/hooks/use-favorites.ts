@@ -13,7 +13,7 @@ export function useUserFavorites() {
     queryFn: async () => {
       try {
         return await fetchUserFavorites()
-      } catch (error) {
+      } catch {
         // Always return empty array for any error to prevent undefined
         return []
       }

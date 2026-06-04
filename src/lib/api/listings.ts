@@ -77,7 +77,7 @@ export async function fetchListing(listingId: string): Promise<ApiListing> {
 
   try {
     return await response.json()
-  } catch (error) {
+  } catch {
     throw new ApiError('Failed to parse response data', ApiErrorCode.PARSE_ERROR)
   }
 }
