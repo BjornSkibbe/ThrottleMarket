@@ -1,6 +1,6 @@
 # ThrottleMarket
 
-![CI](https://github.com/BjornRepo/throttle-market/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/BjornSkibbe/ThrottleMarket/actions/workflows/ci.yml/badge.svg)
 
 A modern full-stack motorcycle and riding gear marketplace built with Next.js, TypeScript, Tailwind CSS, and Prisma.
 
