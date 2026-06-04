@@ -75,18 +75,20 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 h-16 w-full backdrop-blur supports-backdrop-filter:bg-background/60">
       <div className="mx-auto px-4 w-full">
-        <div className="flex h-16 items-center justify-between">
+        <div className="grid grid-cols-3 h-16 items-center">
           {/* Sidebar trigger */}
-          {leftSlot}
+          <div className="flex justify-start">
+            {leftSlot}
+          </div>
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
+          <Link href="/" className="flex items-center justify-center space-x-2">
             <Motorbike className="h-8 w-8 text-accent" />
             <span className="text-xl font-extrabold tracking-tighter italic">
               ThrottleMarket
             </span>
           </Link>
           {/* Auth Buttons / User Menu */}
-          <div className="flex items-center">
+          <div className="flex justify-end items-center">
             {session ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
