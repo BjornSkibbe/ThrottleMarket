@@ -19,7 +19,7 @@ export interface RegisterResponse {
 }
 
 export class AuthService {
-  async signIn(credentials: LoginInput): Promise<Result<void, BaseError>> {
+  async signIn(credentials: LoginInput): Promise<Result<string, BaseError>> {
     const validation = validateResult(loginSchema, credentials)
 
     if (validation.isFailure()) {
@@ -27,10 +27,15 @@ export class AuthService {
     }
 
     try {
+      const callbackUrl = window.location.search
+        ? new URLSearchParams(window.location.search).get('callbackUrl') || '/marketplace-dashboard'
+        : '/marketplace-dashboard'
+
       const result = await signIn('credentials', {
         email: validation.value.email,
         password: validation.value.password,
         redirect: false,
+        callbackUrl,
       })
 
       if (result?.error) {
@@ -38,7 +43,7 @@ export class AuthService {
       }
 
       logBusinessEvent('auth.sign_in.success', { email: validation.value.email }, { action: 'sign_in' })
-      return success(undefined)
+      return success(result?.url ?? callbackUrl)
     } catch (error) {
       const authError = new ApiError('Unable to sign in. Please try again.', ApiErrorCode.INTERNAL_SERVER_ERROR, {
         context: { action: 'sign_in' },

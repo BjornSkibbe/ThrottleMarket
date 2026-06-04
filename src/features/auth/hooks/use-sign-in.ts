@@ -21,20 +21,14 @@ export function useSignIn() {
 
       return result.value
     },
-    onSuccess: async () => {
+    onSuccess: async (url) => {
       queryClient.invalidateQueries({ queryKey: queryKeys.auth.session() })
-      
-      // Wait a moment for the session to be established
+
+      // Wait a moment for the session cookie to be committed
       await new Promise(resolve => setTimeout(resolve, 100))
-      
-      // Check for callback URL from query parameters
-      const urlParams = new URLSearchParams(window.location.search)
-      const callbackUrl = urlParams.get('callbackUrl')
-      
-      // Redirect to callback URL or default to marketplace
-      const redirectUrl = callbackUrl || '/marketplace-dashboard'
-      router.push(redirectUrl)
-      router.refresh()
+
+      // Hard navigation ensures middleware sees the fresh session cookie
+      window.location.href = url ?? '/marketplace-dashboard'
     },
     onError: (error) => {
       logErrorWithStrategy(error, { action: 'sign_in' })
