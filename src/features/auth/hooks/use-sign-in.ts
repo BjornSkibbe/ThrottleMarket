@@ -21,9 +21,19 @@ export function useSignIn() {
 
       return result.value
     },
-    onSuccess: () => {
+    onSuccess: async () => {
       queryClient.invalidateQueries({ queryKey: queryKeys.auth.session() })
-      router.push('/marketplace-dashboard')
+      
+      // Wait a moment for the session to be established
+      await new Promise(resolve => setTimeout(resolve, 100))
+      
+      // Check for callback URL from query parameters
+      const urlParams = new URLSearchParams(window.location.search)
+      const callbackUrl = urlParams.get('callbackUrl')
+      
+      // Redirect to callback URL or default to marketplace
+      const redirectUrl = callbackUrl || '/marketplace-dashboard'
+      router.push(redirectUrl)
       router.refresh()
     },
     onError: (error) => {
