@@ -51,7 +51,7 @@ export default async function Home() {
             className="w-full h-full object-cover opacity-50"
           />
         </div>
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-4">
             <h1 className="text-4xl md:text-6xl font-bold tracking-tighter text-primary italic">
               Find Your <span className="text-accent block text-7xl">Perfect Ride</span>
