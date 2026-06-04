@@ -53,10 +53,10 @@ export default async function Home() {
         </div>
         <div className="container mx-auto relative z-10">
           <div className="max-w-3xl mx-auto text-center space-y-4">
-            <h1 className="text-4xl sm:text-6xl font-bold tracking-tighter text-primary italic">
+            <h1 className="text-6xl font-black tracking-tight text-primary italic flex flex-col sm:flex-row text-center sm:justify-center">
               Find It. <span className="text-accent">Ride It.</span> Love It.
             </h1>
-            <p className="text-sm text-primary/90 max-w-2xl mx-auto tracking-wide">
+            <p className="text-md sm:text-lg font-bold tracking-tight">
               Browse motorcycles and gear from fellow riders and start your next journey today.
             </p>
             <div className="flex flex-col gap-4 justify-center pt-6 w-full max-w-sm mx-auto">
@@ -87,9 +87,9 @@ export default async function Home() {
                   <Icon className="h-8 w-8 text-accent" />
                 </div>
 
-                <h3 className="text-xl font-extrabold italic tracking-tight">{title}</h3>
+                <h3 className="text-xl font-extrabold tracking-tight">{title}</h3>
 
-                <p className="text-primary/50 text-xs tracking-wider">{description}</p>
+                <p className="text-primary/50 text-sm tracking-wide">{description}</p>
               </div>
             ))}
           </div>
@@ -105,7 +105,7 @@ export default async function Home() {
           {featuredListings.length > 0 ? (
             <>
               <div className="text-center mb-8 space-y-2">
-                  <h2 className="text-4xl font-extrabold italic tracking-tighter">Featured</h2>
+                  <h2 className="text-4xl font-extrabold tracking-tight">Featured</h2>
                   <p className="text-primary/50 text-sm tracking-wide">Check out the latest additions to our marketplace</p>
                 </div>
               
@@ -128,8 +128,8 @@ export default async function Home() {
       {/* CTA Section */}
       <section className="relative bg-primary py-12 md:py-24">
         <div className="max-w-7xl mx-auto text-center text-primary-foreground space-y-12 px-3 sm:px-6">
-          <h2 className="text-4xl font-extrabold italic tracking-tighter">Ready to Get Started?</h2>
-          <p className="text-lg font-bold tracking-tight">
+          <h2 className="text-4xl font-black tracking-tight">Ready to Get Started?</h2>
+          <p className="text-md sm:text-lg font-bold tracking-tight">
             Join thousands of riders buying and selling on ThrottleMarket today
           </p>
           <div className="flex flex-col gap-4 justify-center w-full max-w-sm mx-auto">
