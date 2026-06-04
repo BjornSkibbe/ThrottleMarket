@@ -42,7 +42,7 @@ export default async function Home() {
 
   return (
     <div className="flex flex-col">
-      {/* Hero Section */}
+      {/* Hero Section — v2 */}
       <section className="relative py-24 md:py-48 px-3 sm:px-6">
         <div className="absolute inset-0 z-0">
           <img
