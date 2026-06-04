@@ -49,8 +49,6 @@ export function ListingDetailsFields({
   status,
   setStatus,
 }: ListingDetailsFieldsProps) {
-  // console.log("ListingDetailsFields props - category:", category, "location:", location, "brand:", brand, "condition:", condition)
-  // console.log("CATEGORY values:", Object.values(CATEGORY))
   
   return (
     <div>

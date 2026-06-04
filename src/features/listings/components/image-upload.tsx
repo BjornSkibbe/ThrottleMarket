@@ -70,7 +70,6 @@ export function ImageUpload({ value, onChange }: ImageUploadProps) {
               <UploadButton<OurFileRouter, "imageUploader">
                 endpoint="imageUploader"
                 onClientUploadComplete={(res) => {
-                  console.log("Upload complete:", res)
                   const newUrls = res.map((file) => file.url)
                   onChange([...value, ...newUrls])
                 }}
