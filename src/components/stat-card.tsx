@@ -16,7 +16,7 @@ export function StatCard({ title, value, icon: Icon, accent = false }: StatCardP
         <Icon className={`h-7 w-7 ${accent ? 'bg-accent text-background' : 'text-primary'}`} />
       </CardHeader>
       <CardContent>
-        <div className={`text-4xl font-extrabold italic tracking-tighter ${accent ? 'bg-accent text-background' : 'text-primary'}`}>
+        <div className={`text-4xl font-extrabold tracking-tight ${accent ? 'bg-accent text-background' : 'text-primary'}`}>
           {value}
         </div>
       </CardContent>

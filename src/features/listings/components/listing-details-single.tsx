@@ -56,7 +56,7 @@ export function ListingDetailsSingle({
           motorcycle={motorcycle}
           title={title}
           brand={brand}
-          className="text-2xl sm:text-5xl font-extrabold leading-tighter tracking-tight italic"
+          className="text-2xl sm:text-5xl font-extrabold tracking-tight"
         />
         {/* 
           ListingLocationCreated 

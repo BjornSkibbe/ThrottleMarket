@@ -16,13 +16,13 @@ export function PageTitle({
       <div className="flex items-center gap-2">
         {Icon && <Icon className="h-7 w-7" />}
         
-        <h1 className="text-4xl font-black tracking-tighter italic">
+        <h1 className="text-4xl font-black tracking-tight">
           {title}
         </h1>
       </div>
 
       {description && (
-        <p className="text-sm text-muted-foreground italic ml-8">
+        <p className="text-sm text-muted-foreground ml-8">
           {description}
         </p>
       )}

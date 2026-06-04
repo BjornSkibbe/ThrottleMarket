@@ -139,19 +139,19 @@ export function MyListingsTable({ listings, viewCounts = {}, conversationCounts 
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end" className="p-2 space-y-2">
                         <DropdownMenuItem asChild>
-                          <Link className="text-xs italic" href={`/listings/${listing.id}`}>
+                          <Link className="text-xs" href={`/listings/${listing.id}`}>
                             <Eye className="h-4 w-4" />
                             View
                           </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild>
-                          <Link className="text-xs italic" href={`/listings/${listing.id}/edit`}>
+                          <Link className="text-xs" href={`/listings/${listing.id}/edit`}>
                             <Edit className="h-4 w-4" />
                             Edit
                           </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild>
-                          <Link className="text-xs italic" href={`/listings/${listing.id}/delete`}>
+                          <Link className="text-xs" href={`/listings/${listing.id}/delete`}>
                             <Trash2 className="h-4 w-4" />
                             Delete
                           </Link>

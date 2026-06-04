@@ -57,7 +57,7 @@ export const ListingDetails = memo(function ListingDetails({
             motorcycle={motorcycle}
             title={title}
             brand={brand}
-            className="text-normal font-bold leading-tight tracking-tight italic"
+            className="text-normal font-bold leading-tight tracking-tight"
           />
         </div>
         {/* 
