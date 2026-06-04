@@ -1,12 +1,13 @@
-import { auth } from "@/features/auth/lib/auth"
 import { NextResponse } from "next/server"
+import type { NextRequest } from "next/server"
 
 /**
- * Next.js Middleware — runs at the edge before requests hit the application.
+ * Next.js Middleware — lightweight edge guard.
  *
- * Protects authenticated routes by checking the session JWT. Unauthenticated
- * users are redirected to the sign-in page with a `callbackUrl` so they
- * return to their intended destination after logging in.
+ * We avoid importing the NextAuth config here because it bundles Prisma,
+ * bcryptjs, and jose, which pushes the Edge Function over Vercel's 1 MB
+ * limit. Instead, we check for the session cookie by name and let route
+ * handlers perform the actual JWT validation.
  */
 
 const PUBLIC_ROUTES = [
@@ -39,8 +40,6 @@ function isPublicRoute(pathname: string): boolean {
   if (PUBLIC_PREFIXES.some((prefix) => pathname.startsWith(prefix))) {
     return true
   }
-  // Allow viewing individual listings without auth
-  // e.g. /listings/abc123 but NOT /listings/create, /listings/abc123/edit, etc.
   if (pathname === "/listings" || pathname.startsWith("/listings/")) {
     if (pathname === "/listings/create") return false
     if (pathname.endsWith("/edit") || pathname.endsWith("/delete")) return false
@@ -49,19 +48,23 @@ function isPublicRoute(pathname: string): boolean {
   return false
 }
 
-export default auth((req) => {
-  const { nextUrl } = req
-  const isLoggedIn = !!req.auth?.user
-  const pathname = nextUrl.pathname
+function hasSessionCookie(request: NextRequest): boolean {
+  return !!(
+    request.cookies.get("next-auth.session-token")?.value ||
+    request.cookies.get("__Secure-next-auth.session-token")?.value
+  )
+}
 
-  // Allow public routes without authentication
+export function middleware(request: NextRequest) {
+  const { pathname } = request.nextUrl
+
   if (isPublicRoute(pathname)) {
     return NextResponse.next()
   }
 
-  // Redirect unauthenticated users to sign-in
+  const isLoggedIn = hasSessionCookie(request)
   if (!isLoggedIn) {
-    const signInUrl = nextUrl.clone()
+    const signInUrl = request.nextUrl.clone()
     signInUrl.pathname = "/auth/signin"
     signInUrl.search = ""
     signInUrl.searchParams.set("callbackUrl", pathname)
@@ -69,8 +72,8 @@ export default auth((req) => {
   }
 
   return NextResponse.next()
-})
+}
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico|.*\\.png$|.*\\.jpg$|.*\\.svg$).*)/"],
 }
