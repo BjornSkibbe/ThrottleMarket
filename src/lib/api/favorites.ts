@@ -14,11 +14,18 @@ interface ToggleFavoriteResponse {
 }
 
 export async function fetchUserFavorites(): Promise<string[]> {
-  const response = await fetchClient.get<FavoritesResponse>('/api/favorites', {
-    timeout: API_TIMEOUTS.FETCH,
-  })
+  try {
+    const response = await fetchClient.get<FavoritesResponse>('/api/favorites', {
+      timeout: API_TIMEOUTS.FETCH,
+      // Prevent following redirects to avoid getting sign-in page HTML
+      redirect: 'manual'
+    })
 
-  return response.data.listingIds
+    return response.data.listingIds
+  } catch (error) {
+    // Return empty array for any error to prevent undefined
+    return []
+  }
 }
 
 export async function toggleFavorite(listingId: string): Promise<boolean> {

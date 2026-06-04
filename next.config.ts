@@ -2,6 +2,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   serverExternalPackages: ["pino", "pino-pretty"],
+  allowedDevOrigins: ["192.168.68.106"],
   images: {
     remotePatterns: [
       {
@@ -21,11 +22,14 @@ const nextConfig: NextConfig = {
     ],
   },
   async headers() {
+    const isDev = process.env.NODE_ENV === 'development';
+    
     return [
       {
         source: "/(.*)",
         headers: [
-          {
+          // Only apply CSP in production, or use very permissive CSP in dev
+          ...(isDev ? [] : [{
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
@@ -33,10 +37,11 @@ const nextConfig: NextConfig = {
               "style-src 'self' 'unsafe-inline'",
               "img-src 'self' data: https:",
               "connect-src 'self'",
+              "font-src 'self' data:",
               "frame-ancestors 'none'",
               "upgrade-insecure-requests",
             ].join("; "),
-          },
+          }]),
           {
             key: "X-Frame-Options",
             value: "DENY",

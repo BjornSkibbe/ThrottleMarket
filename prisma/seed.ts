@@ -365,7 +365,7 @@ async function main() {
     title: 'Gaerne GP1 Evo',
     description: `The GP1 EVO racing boots epitomize over sixty years of Italian excellence and passion in the thrilling world of racing. Representing the pinnacle of the Racing line, the GP1 EVO motorcycle boot is the result of collaboration between Gaerne's R&D and professional riders, standing as a testament to the company’s commitment to innovation and performance.`,
     category: 'BOOTS',
-    brand: 'RST',
+    brand: 'GAERNE',
     price: 9899,
     size: 'EU43_UK8',
     condition: 'NEW',
