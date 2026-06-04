@@ -52,13 +52,13 @@ export function PasswordResetRequest() {
           </div>
           <CardTitle className="text-2xl font-bold">Check Your Email</CardTitle>
           <CardDescription>
-            If an account exists with that email, we've sent a password reset link.
+            If an account exists with that email, we&apos;ve sent a password reset link.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           <div className="text-center text-sm text-muted-foreground">
             <p>The link will expire in 1 hour for security reasons.</p>
-            <p className="mt-2">Didn't receive the email? Check your spam folder.</p>
+            <p className="mt-2">Didn&apos;t receive the email? Check your spam folder.</p>
           </div>
         </CardContent>
         <CardFooter className="flex flex-col space-y-6 bg-transparent w-full px-0 py-6 border-none">
@@ -82,7 +82,7 @@ export function PasswordResetRequest() {
         </div>
         <CardTitle className="text-2xl font-bold">Reset Password</CardTitle>
         <CardDescription>
-          Enter your email address and we'll send you a link to reset your password.
+          Enter your email address and we&apos;ll send you a link to reset your password.
         </CardDescription>
       </CardHeader>
       <form onSubmit={handleSubmit}>

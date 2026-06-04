@@ -1,6 +1,7 @@
 import { randomBytes } from 'crypto'
 import { prisma } from '@/lib/prisma'
 import { sendEmail, generatePasswordResetHtml } from '@/lib/email.service'
+import bcrypt from 'bcryptjs'
 
 export class PasswordResetService {
   static async createResetToken(email: string): Promise<{ success: boolean; message: string }> {
@@ -103,7 +104,6 @@ export class PasswordResetService {
       }
 
       // Hash new password
-      const bcrypt = require('bcryptjs')
       const hashedPassword = await bcrypt.hash(newPassword, 12)
 
       // Update user password
