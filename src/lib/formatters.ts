@@ -93,12 +93,21 @@ export function formatBrand(brand: string): string {
     DUCATI: 'Ducati',
     TRIUMPH: 'Triumph',
     OTHER: 'Other',
-    SHARK: 'Shark',
+    ALPINESTARS: 'Alpinestars',
+    BERIK: 'Berik',
     CARDO: 'Cardo',
     DJI: 'DJI',
-    ALPINESTARS: 'Alpinestars',
+    GAERNE: 'Gaerne',
     LS2: 'LS2',
+    NOLAN: 'Nolan',
+    KYT: 'KYT',
+    OXFORD: 'Oxford',
     RST: 'RST',
+    SCORPION: 'Scorpion',
+    SHARK: 'Shark',
+    SHOEI: 'Shoei',
+    VYKON: 'Vykon',
+    YOSHIMURA: 'Yoshimura',
   }
   return brandMap[brand] || brand
 }
