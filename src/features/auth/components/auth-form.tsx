@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Bike } from 'lucide-react'
+import { Motorbike } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -80,7 +80,7 @@ export function AuthForm({ mode }: AuthFormProps) {
       <CardHeader className="space-y-2 text-center">
         <div className="flex justify-center">
           <div className="p-3 rounded-full bg-primary/10">
-            <Bike className="h-8 w-8 text-accent" />
+            <Motorbike className="h-8 w-8 text-accent" />
           </div>
         </div>
         <CardTitle className="text-2xl font-bold">{config.title}</CardTitle>
