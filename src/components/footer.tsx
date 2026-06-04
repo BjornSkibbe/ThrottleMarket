@@ -41,7 +41,7 @@ export function Footer() {
       <div className="flex flex-col items-center space-y-4 py-12 px-3">
         <Link href="/" className="flex flex-col items-center space-x-2">
           <Motorbike className="h-8 w-8 text-accent" />
-          <span className="text-2xl font-extrabold tracking-tighter italic">
+          <span className="text-xl font-extrabold tracking-tighter italic">
             {brand.name}
           </span>
         </Link>
@@ -69,7 +69,7 @@ export function Footer() {
           <p>&copy; {year} ThrottleMarket. All rights reserved.</p>
         </div>
       </div>
-      <div className="flex justify-center text-center border-t items-center p-6">
+      <div className="flex justify-center text-center border-t items-center py-3">
         {/* Quick Links */}
         <div className="p-3 flex justify-between">
           <ul className="flex gap-6">

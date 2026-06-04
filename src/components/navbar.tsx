@@ -80,8 +80,8 @@ export function Navbar() {
           {leftSlot}
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <Motorbike className="h-10 w-10 text-accent" />
-            <span className="text-2xl font-extrabold tracking-tighter italic">
+            <Motorbike className="h-8 w-8 text-accent" />
+            <span className="text-xl font-extrabold tracking-tighter italic">
               ThrottleMarket
             </span>
           </Link>
@@ -149,7 +149,7 @@ export function Navbar() {
               </DropdownMenu>
             ) : (
               <Link href="/auth/signin">
-                <Button variant="ghost"><LogIn className="h-4 w-4" />Login</Button>
+                <Button variant="ghost"><LogIn className="h-4 w-4" /><span className="hidden sm:inline">Login</span></Button>
               </Link>
             )}
           </div>
