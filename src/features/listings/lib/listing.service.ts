@@ -10,6 +10,7 @@ import { ListingData, ListingFilters, Category, Brand, Condition, Location, Size
 import { Listing as PrismaListing } from '@prisma/client'
 import { DatabaseError, DatabaseErrorCode, ValidationError, ValidationErrorCode } from '@/lib/errors'
 import { logErrorWithStrategy } from '@/lib/logger/server'
+import { sanitizeContent } from '@/lib/sanitize'
 
 export interface CreateListingInput {
   title: string
@@ -126,8 +127,8 @@ export class ListingService {
 
       // Create listing through repository
       return await listingRepository.create({
-        title: data.title,
-        description: data.description,
+        title: sanitizeContent(data.title),
+        description: sanitizeContent(data.description),
         price: data.price,
         category: data.category,
         brand: data.brand,
@@ -186,8 +187,8 @@ export class ListingService {
 
       // Update listing through repository
       return await listingRepository.update(id, {
-        title: data.title,
-        description: data.description,
+        title: data.title !== undefined ? sanitizeContent(data.title) : undefined,
+        description: data.description !== undefined ? sanitizeContent(data.description) : undefined,
         price: data.price,
         category: data.category,
         brand: data.brand,
