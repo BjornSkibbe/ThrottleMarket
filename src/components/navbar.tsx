@@ -82,7 +82,7 @@ export function Navbar() {
           </div>
           {/* Logo */}
           <Link href="/" className="flex items-center justify-center space-x-2">
-            <Motorbike className="h-8 w-8 text-accent" />
+            <Motorbike className="h-8 w-8 sm:h-8 sm:w-8 text-accent flex-shrink-0" />
             <span className="text-xl font-extrabold tracking-tighter italic">
               ThrottleMarket
             </span>
