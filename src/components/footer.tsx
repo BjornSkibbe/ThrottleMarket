@@ -39,8 +39,8 @@ export function Footer() {
     <footer className="bg-muted/30">
       {/* Logo + Description */}
       <div className="flex flex-col items-center space-y-4 py-12 px-3">
-        <Link href="/" className="flex flex-col items-center space-x-2">
-          <Motorbike className="h-8 w-8 text-accent" />
+        <Link href="/" className="flex flex-col items-center">
+          <Motorbike className="h-8 w-8 text-accent flex-shrink-0" />
           <span className="text-xl font-extrabold tracking-tighter italic">
             {brand.name}
           </span>
