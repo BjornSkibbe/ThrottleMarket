@@ -147,11 +147,11 @@ export function Navbar() {
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
-            ) : (
+            ) : !isAuthPage ? (
               <Link href="/auth/signin">
                 <Button variant="ghost"><LogIn className="h-4 w-4" /><span className="hidden sm:inline">Login</span></Button>
               </Link>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
