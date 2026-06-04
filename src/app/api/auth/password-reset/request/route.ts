@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 import { z } from 'zod'
 import { withRateLimit, RateLimitPresets } from '@/lib/middleware/rate-limit'
 import { PasswordResetService } from '@/features/auth/lib/password-reset.service'

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server"
+import { NextResponse } from "next/server"
 import { requireAuth } from "@/lib/middleware/auth"
 import { withCSRFProtection } from "@/lib/middleware/csrf"
 import { withRateLimit, RateLimitPresets } from "@/lib/middleware/rate-limit"
