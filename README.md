@@ -4,6 +4,8 @@
 
 A modern full-stack motorcycle and riding gear marketplace built with Next.js, TypeScript, Tailwind CSS, and Prisma.
 
+**Live Demo:** [throttle-market.vercel.app](https://throttle-market.vercel.app)
+
 ## Features
 
 - **User Authentication**: Secure sign-up and login with NextAuth.js
