@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { Motorbike } from 'lucide-react'
+import { Motorbike, LogIn } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
@@ -228,7 +228,8 @@ export function AuthForm({ mode }: AuthFormProps) {
           )}
         </CardContent>
         <CardFooter className="flex flex-col space-y-6 bg-transparent w-full px-0 py-6 border-none">
-          <Button type="submit" variant="default" size="lg" className="w-full" disabled={isLoading}>
+          <Button type="submit" variant="default" size="lg" className="w-full gap-2" disabled={isLoading}>
+            <LogIn className="h-4 w-4" />
             {isLoading ? config.buttonLoadingText : config.buttonText}
           </Button>
           <p className="text-sm text-muted-foreground text-center">
