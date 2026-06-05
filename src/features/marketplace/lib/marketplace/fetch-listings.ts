@@ -81,9 +81,10 @@ export async function fetchListings(
 
 async function fetchCategoryCounts(where: Prisma.ListingWhereInput) {
   try {
+    const whereWithoutCategory = buildWhereClauseWithoutFilter(where, 'category')
     const categoryCounts = await prisma.listing.groupBy({
       by: ['category'],
-      where,
+      where: whereWithoutCategory,
       _count: {
         category: true,
       },
