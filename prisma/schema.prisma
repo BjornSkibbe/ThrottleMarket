@@ -280,6 +280,7 @@ enum Model {
   MT03
   MT07
   MT09
+  MT09_SP
   MT10
   XSR700
   XSR900

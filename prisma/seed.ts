@@ -176,6 +176,52 @@ async function main() {
 
   await prisma.listing.create({
     data: {
+      title: '2026 Yamaha MT-09 SP',
+      description:
+        'Experience the exhilarating torque of the 890cc EU5+ CP3 engine like never before, with enhanced track-focused rider modes customisable to suit different circuits or conditions. The SP-exclusive DLC-coated 41 mm KYB gold front forks are paired with the fully adjustable Öhlins rear shock for the most refined Hyper Naked riding experience yet.',
+      category: 'MOTORCYCLE',
+      brand: 'YAMAHA',
+      price: 269950,
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user3.id,
+
+      images: {
+        create: [
+          {
+            url: '/motorcycle-images/YAMAHA_MT09_SP_1.png',
+            order: 0,
+          },
+          {
+            url: '/motorcycle-images/YAMAHA_MT09_SP_2.png',
+            order: 1,
+          },
+          {
+            url: '/motorcycle-images/YAMAHA_MT09_SP_3.png',
+            order: 2,
+          },
+          {
+            url: '/motorcycle-images/YAMAHA_MT09_SP_4.png',
+            order: 3,
+          },
+        ],
+      },
+
+      motorcycle: {
+        create: {
+          model: 'MT09_SP',
+          type: 'HYPER_NAKED',
+          year: 2026,
+          mileage: 0,
+          engineSize: 890,
+        },
+      },
+    },
+  })
+
+  await prisma.listing.create({
+    data: {
       title: '2026 Yamaha MT-07',
       description:
         'The latest MT-07 features radially mounted front brake calipers, inverted forks and lightweight SpinForged wheels.',
