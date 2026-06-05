@@ -197,7 +197,7 @@ export function MyListingsTable({ listings, viewCounts = {}, conversationCounts 
                 )}
               </div>
               <div className="flex-1 min-w-0 space-y-1">
-                <p className="font-bold italic text-sm truncate">
+                <p className="font-bold text-sm truncate">
                   {displayTitle}
                 </p>
                 <p className="text-xs font-normal text-primary/50 mt-0.5">

@@ -29,7 +29,7 @@ export function FormHeader({ mode, listingId }: FormHeaderProps) {
           Back to dashboard
         </Link>
       )}
-      <h1 className="text-4xl font-black tracking-tighter italic mb-2">
+      <h1 className="text-4xl font-black tracking-tight mb-2">
         {mode === 'create' ? (
           <>
             <span className="text-accent">Create</span> Listing
@@ -40,7 +40,7 @@ export function FormHeader({ mode, listingId }: FormHeaderProps) {
           </>
         )}
       </h1>
-      <p className="text-muted-foreground italic">
+      <p className="text-muted-foreground">
         {mode === 'create' ? 'List your motorcycle or riding gear for sale' : 'Update your listing details'}
       </p>
     </div>

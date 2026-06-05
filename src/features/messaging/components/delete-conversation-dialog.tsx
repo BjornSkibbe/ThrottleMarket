@@ -42,7 +42,7 @@ export function DeleteConversationDialog({
             size="lg"
             onClick={() => onOpenChange(false)}
             disabled={isPending}
-            className="flex-1 italic"
+            className="flex-1"
           >
             <X />Cancel
           </Button>
@@ -51,7 +51,7 @@ export function DeleteConversationDialog({
             size="lg"
             onClick={onConfirm}
             disabled={isPending}
-            className="flex-1 italic"
+            className="flex-1"
           >
             <Check />{isPending ? "Deleting..." : "Confirm"}
           </Button>

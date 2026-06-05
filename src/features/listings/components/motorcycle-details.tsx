@@ -23,11 +23,11 @@ export function MotorcycleDetails({ brand, motorcycle }: MotorcycleDetailsProps)
   ].filter((item) => item.value !== null)
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 h-fit">
+    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 h-fit">
       {details.map((item) => (
         <div key={item.label} className="py-8 rounded-2xl bg-muted/30 text-center">
-          <p className="text-xs italic text-muted-foreground">{item.label}</p>
-          <p className="text-sm italic font-extrabold">{item.value}</p>
+          <p className="text-xs text-muted-foreground">{item.label}</p>
+          <p className="text-sm font-extrabold">{item.value}</p>
         </div>
       ))}
     </div>

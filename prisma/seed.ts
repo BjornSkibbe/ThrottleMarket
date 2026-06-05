@@ -696,7 +696,7 @@ await prisma.listing.create({
       listingId: motorcycle1.id,
       buyerId: user2.id,
       sellerId: user1.id,
-      lastMessage: 'Would you take R118k?',
+      lastMessage: 'Would you take R219k?',
       lastMessageAt: new Date(),
 
       participants: {
@@ -716,7 +716,7 @@ await prisma.listing.create({
         create: [
           {
             senderId: user2.id,
-            content: 'This CBR is beautiful.',
+            content: 'This R9 is beautiful.',
           },
           {
             senderId: user1.id,
@@ -732,7 +732,7 @@ await prisma.listing.create({
           },
           {
             senderId: user2.id,
-            content: 'Would you take R118k?',
+            content: 'Would you take R219k?',
           },
         ],
       },

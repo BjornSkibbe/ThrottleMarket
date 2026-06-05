@@ -25,7 +25,7 @@ export function UnsavedChangesDialog({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className="font-bold text-2xl italic tracking-tighter">{DIALOG_TEXT.unsavedChanges.title}</DialogTitle>
+          <DialogTitle className="font-bold text-2xl tracking-tight">{DIALOG_TEXT.unsavedChanges.title}</DialogTitle>
           <DialogDescription>
             {DIALOG_TEXT.unsavedChanges.description}
           </DialogDescription>

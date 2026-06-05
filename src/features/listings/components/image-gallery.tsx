@@ -31,6 +31,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
 
   return (
     <>
+    <div className="flex flex-col gap-3">
       <div className="relative aspect-square overflow-hidden rounded-4xl bg-muted items-center">
         {/* 
           Main Image 
@@ -74,7 +75,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
         Image Thumbnails 
       */}
       {images.length > 1 && (
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-4 gap-3">
           {images.map((image, index) => (
             <button
               key={image.id}
@@ -96,6 +97,7 @@ export function ImageGallery({ images }: ImageGalleryProps) {
           ))}
         </div>
       )}
+      </div>
     </>
   )
 }

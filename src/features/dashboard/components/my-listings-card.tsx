@@ -72,7 +72,7 @@ export function MyListingsCard({ listing }: MyListingsCardProps) {
           )}
 
           {/* MOTORCYCLE MODEL */}
-          <span className="absolute bottom-2 left-4 text-2xl font-black italic text-muted-foreground tracking-tighter">
+          <span className="absolute bottom-2 left-4 text-2xl font-black text-muted-foreground tracking-tighter">
             {formatModel(listing.motorcycle?.model || "")}
           </span>
           
