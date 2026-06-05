@@ -115,12 +115,14 @@ export function formatBrand(brand: string): string {
 export function formatModel(model: string): string {
   const modelMap: Record<string, string> = {
     YZF_R1: 'YZF-R1',
+    YZF_R9: 'YZF-R9',
     YZF_R6: 'YZF-R6',
     YZF_R7: 'YZF-R7',
     YZF_R3: 'YZF-R3',
     MT03: 'MT-03',
     MT07: 'MT-07',
     MT09: 'MT-09',
+    MT09_SP: 'MT-09 SP',
     MT10: 'MT-10',
     XSR700: 'XSR700',
     XSR900: 'XSR900',

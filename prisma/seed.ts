@@ -282,9 +282,9 @@ async function main() {
 
       images: {
         create: [
-          {url: '/listing-images/SHARK_D_SKWAL_3_1.png',order: 0,},
-          {url: '/listing-images/SHARK_D_SKWAL_3_2.png',order: 1,},
-          {url: '/listing-images/SHARK_D_SKWAL_3_3.png',order: 2,},
+          {url: '/listing-images/Helmet/SHARK_D_SKWAL_3_1.png',order: 0,},
+          {url: '/listing-images/Helmet/SHARK_D_SKWAL_3_2.png',order: 1,},
+          {url: '/listing-images/Helmet/SHARK_D_SKWAL_3_3.png',order: 2,},
         ],
       },
     },
@@ -304,7 +304,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/LS2_FF807_DRAGON_CM_1.png', order: 0 },
+          { url: '/listing-images/Helmet/LS2_FF807_DRAGON_CM_1.png', order: 0 },
         ],
       },
     },
@@ -323,7 +323,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/LS2_FF807_DRAGON_ENTHUM_1.png', order: 0 },
+          { url: '/listing-images/Helmet/LS2_FF807_DRAGON_ENTHUM_1.png', order: 0 },
         ],
       },
     },
@@ -342,10 +342,33 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/ALPINESTARS_SUPERTECH_R10_SOLID_1.png', order: 0 },
-          { url: '/listing-images/ALPINESTARS_SUPERTECH_R10_SOLID_2.png', order: 1 },
-          { url: '/listing-images/ALPINESTARS_SUPERTECH_R10_SOLID_3.png', order: 2 },
-          { url: '/listing-images/ALPINESTARS_SUPERTECH_R10_SOLID_4.png', order: 3 },
+          { url: '/listing-images/Helmet/ALPINESTARS_SUPERTECH_R10_SOLID_1.png', order: 0 },
+          { url: '/listing-images/Helmet/ALPINESTARS_SUPERTECH_R10_SOLID_2.png', order: 1 },
+          { url: '/listing-images/Helmet/ALPINESTARS_SUPERTECH_R10_SOLID_3.png', order: 2 },
+          { url: '/listing-images/Helmet/ALPINESTARS_SUPERTECH_R10_SOLID_4.png', order: 3 },
+        ],
+      },
+    },
+  })
+
+  await prisma.listing.create({
+    data: {
+      title: 'Nolan N60-6 Sport Dark Edition',
+      description: "An aggressive version of the N60 helmet, The N60 Sport enhanced by a large rear spoiler designed to meet the needs of adrenaline enthusiasts. Riders who seek distinction, starting with the sporty-inspired design, choice of unique colors and graphics. Its wide panoramic visor, exceptional ventilation system, and interior eco-friendly padding make it the perfect companion for all the roads, easy to wear and functional. Ride with confidence, knowing the N60 Sport meets stringent safety standards and advanced features.100% made in Italy.",
+      category: 'HELMET',
+      brand: 'NOLAN',
+      price: 5000,
+      size: 'L',
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Helmet/NOLAN_N60_6_SPORT_DARK_EDITION_1.png', order: 0 },
+          { url: '/listing-images/Helmet/NOLAN_N60_6_SPORT_DARK_EDITION_2.png', order: 1 },
+          { url: '/listing-images/Helmet/NOLAN_N60_6_SPORT_DARK_EDITION_3.png', order: 2 },
+          { url: '/listing-images/Helmet/NOLAN_N60_6_SPORT_DARK_EDITION_4.png', order: 3 },
         ],
       },
     },
@@ -365,7 +388,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/RST_S1_PANTS_1.png', order: 0 },
+          { url: '/listing-images/Pants/RST_S1_PANTS_1.png', order: 0 },
         ],
       },
     },
@@ -384,7 +407,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/RST_S1_MESH_D3O_TEXTILE_JACKET_1.png', order: 0 },
+          { url: '/listing-images/Jacket/RST_S1_MESH_D3O_TEXTILE_JACKET_1.png', order: 0 },
         ],
       },
     },
@@ -403,7 +426,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/CARDO_NEO_1.png', order: 0 },
+          { url: '/listing-images/Accessories/CARDO_NEO_1.png', order: 0 },
         ],
       },
     },
@@ -421,7 +444,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/CARDO_FREECOM_4X_1.png', order: 0 },
+          { url: '/listing-images/Accessories/CARDO_FREECOM_4X_1.png', order: 0 },
         ],
       },
     },
@@ -440,7 +463,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/DJI_OSMO_ACTION_5_PRO_ADVENTURE_COMBO_1.png', order: 0 },
+          { url: '/listing-images/Accessories/DJI_OSMO_ACTION_5_PRO_ADVENTURE_COMBO_1.png', order: 0 },
         ],
       },
     },
@@ -458,7 +481,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/DJI_OSMO_ACTION_5_PRO_STANDARD_COMBO_1.png', order: 0 },
+          { url: '/listing-images/Accessories/DJI_OSMO_ACTION_5_PRO_STANDARD_COMBO_1.png', order: 0 },
         ],
       },
     },
@@ -477,18 +500,10 @@ async function main() {
     sellerId: user1.id,
     images: {
       create: [
-        {
-          url: '/listing-images/GAERNE_GP1_EVO_WBY_1.png', order: 0,
-        },
-        {
-          url: '/listing-images/GAERNE_GP1_EVO_WBY_2.png', order: 1,
-        },
-        {
-          url: '/listing-images/GAERNE_GP1_EVO_WBY_3.png', order: 2,
-        },
-        {
-          url: '/listing-images/GAERNE_GP1_EVO_WBY_4.png', order: 3,
-        },
+        {url: '/listing-images/Boots/GAERNE_GP1_EVO_WBY_1.png', order: 0,},
+        {url: '/listing-images/Boots/GAERNE_GP1_EVO_WBY_2.png', order: 1,},
+        {url: '/listing-images/Boots/GAERNE_GP1_EVO_WBY_3.png', order: 2,},
+        {url: '/listing-images/Boots/GAERNE_GP1_EVO_WBY_4.png', order: 3,},
         
       ],
     },
@@ -508,7 +523,7 @@ await prisma.listing.create({
     sellerId: user1.id,
     images: {
       create: [
-        { url: '/listing-images/ALPINESTARS_SMX_PLUS_BLACK_1.png', order: 0 },
+        { url: '/listing-images/Boots/ALPINESTARS_SMX_PLUS_BLACK_1.png', order: 0 },
       ],
     },
   },
@@ -527,7 +542,7 @@ await prisma.listing.create({
     sellerId: user1.id,
     images: {
       create: [
-        { url: '/listing-images/ALPINESTARS_SP3_GLOVES_1.png', order: 0 },
+        { url: '/listing-images/Gloves/ALPINESTARS_SP3_GLOVES_1.png', order: 0 },
       ],
     },
   },
