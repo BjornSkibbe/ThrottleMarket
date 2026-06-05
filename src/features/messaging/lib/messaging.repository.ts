@@ -275,9 +275,10 @@ export class MessagingRepository {
             },
           },
         },
-        orderBy: {
-          createdAt: 'asc',
-        },
+        orderBy: [
+          { createdAt: 'asc' },
+          { id: 'asc' },
+        ],
         skip,
         take: options.limit,
       }),
