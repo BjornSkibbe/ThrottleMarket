@@ -76,11 +76,11 @@ async function main() {
       images: {
         create: [
           {
-            url: '/motorcycle-images/YAMAHA-YZF-R9_1.png',
+            url: '/motorcycle-images/YAMAHA_YZF_R9_1.png',
             order: 0,
           },
           {
-            url: '/motorcycle-images/YAMAHA-YZF-R9_2.png',
+            url: '/motorcycle-images/YAMAHA_YZF_R9_2.png',
             order: 1,
           },
         ],
@@ -114,11 +114,11 @@ async function main() {
       images: {
         create: [
           {
-            url: '/motorcycle-images/YAMAHA-YZF-R7_1.png',
+            url: '/motorcycle-images/YAMAHA_YZF_R7_1.png',
             order: 0,
           },
           {
-            url: '/motorcycle-images/YAMAHA-YZF-R7_2.png',
+            url: '/motorcycle-images/YAMAHA_YZF_R7_2.png',
             order: 1,
           },
         ],
@@ -152,11 +152,11 @@ async function main() {
       images: {
         create: [
           {
-            url: '/motorcycle-images/YAMAHA-YZF-R3_1.png',
+            url: '/motorcycle-images/YAMAHA_YZF_R3_1.png',
             order: 0,
           },
           {
-            url: '/motorcycle-images/YAMAHA-YZF-R3_2.png',
+            url: '/motorcycle-images/YAMAHA_YZF_R3_2.png',
             order: 1,
           },
         ],
@@ -164,11 +164,11 @@ async function main() {
 
       motorcycle: {
         create: {
-          model: 'STREET_TRIPLE_765',
-          type: 'HYPER_NAKED',
-          year: 2023,
-          mileage: 8000,
-          engineSize: 765,
+          model: 'YZF_R3',
+          type: 'NAKED',
+          year: 2026,
+          mileage: 0,
+          engineSize: 321,
         },
       },
     },
@@ -236,18 +236,70 @@ async function main() {
 
       images: {
         create: [
-          {
-            url: '/listing-images/SHARK_D-SKWAL_3_1.png',
-            order: 0,
-          },
-          {
-            url: '/listing-images/SHARK_D-SKWAL_3_2.png',
-            order: 1,
-          },
-          {
-            url: '/listing-images/SHARK_D-SKWAL_3_3.png',
-            order: 2,
-          },
+          {url: '/listing-images/SHARK_D_SKWAL_3_1.png',order: 0,},
+          {url: '/listing-images/SHARK_D_SKWAL_3_2.png',order: 1,},
+          {url: '/listing-images/SHARK_D_SKWAL_3_3.png',order: 2,},
+        ],
+      },
+    },
+  })
+
+  await prisma.listing.create({
+    data: {
+      title: 'LS2 FF807 Dragon Carbon Matt',
+      description: 'Discover the Dragon Helmet, the perfect combination of lightness and strength. Made of 6K carbon, this sport-touring helmet is ideal for everyday use and for your weekend rides. Protection, comfort and performance in one helmet, choose Dragon and take your experience to the limit!',
+      category: 'HELMET',
+      brand: 'LS2',
+      price: 5700,
+      size: 'M',
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/LS2_FF807_DRAGON_CM_1.png', order: 0 },
+        ],
+      },
+    },
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'LS2 FF807 Dragon Enthum Silver',
+      description: 'Discover the Dragon Helmet, the perfect combination of lightness and strength. Made of 6K carbon, this sport-touring helmet is ideal for everyday use and for your weekend rides. Protection, comfort and performance in one helmet, choose Dragon and take your experience to the limit!',
+      category: 'HELMET',
+      brand: 'LS2',
+      price: 5700,
+      size: 'M',
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/LS2_FF807_DRAGON_ENTHUM_1.png', order: 0 },
+        ],
+      },
+    },
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'Alpinestars Supertech R10 Solid',
+      description: "Developed over a decade, the Supertech R10 is Alpinestars' most advanced race helmet, designed for ultimate protection, aerodynamic efficiency, and lightweight performance. Rigorously tested with MotoGP legends like Andrea Dovizioso, Jorge Martin, and Jack Miller, the CE certified S-R10 motorcycle helmet is fully ventilated and delivers unparalleled safety and comfort.",
+      category: 'HELMET',
+      brand: 'ALPINESTARS',
+      price: 21500,
+      size: 'S',
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/ALPINESTARS_SUPERTECH_R10_SOLID_1.png', order: 0 },
+          { url: '/listing-images/ALPINESTARS_SUPERTECH_R10_SOLID_2.png', order: 1 },
+          { url: '/listing-images/ALPINESTARS_SUPERTECH_R10_SOLID_3.png', order: 2 },
+          { url: '/listing-images/ALPINESTARS_SUPERTECH_R10_SOLID_4.png', order: 3 },
         ],
       },
     },
@@ -305,7 +357,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/CARDO_NEO.png', order: 0 },
+          { url: '/listing-images/CARDO_NEO_1.png', order: 0 },
         ],
       },
     },
@@ -323,49 +375,12 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/CARDO_FREECOM_4X.png', order: 0 },
+          { url: '/listing-images/CARDO_FREECOM_4X_1.png', order: 0 },
         ],
       },
     },
   })
-  await prisma.listing.create({
-    data: {
-      title: 'LS2 FF807 Dragon Carbon Matt',
-      description: 'Discover the Dragon Helmet, the perfect combination of lightness and strength. Made of 6K carbon, this sport-touring helmet is ideal for everyday use and for your weekend rides. Protection, comfort and performance in one helmet, choose Dragon and take your experience to the limit!',
-      category: 'HELMET',
-      brand: 'LS2',
-      price: 5700,
-      size: 'M',
-      condition: 'NEW',
-      location: 'WESTERN_CAPE',
-      status: 'ACTIVE',
-      sellerId: user1.id,
-      images: {
-        create: [
-          { url: '/listing-images/LS2_FF807_DRAGON_CM_1.png', order: 0 },
-        ],
-      },
-    },
-  })
-  await prisma.listing.create({
-    data: {
-      title: 'LS2 FF807 Dragon Enthum Silver',
-      description: 'Discover the Dragon Helmet, the perfect combination of lightness and strength. Made of 6K carbon, this sport-touring helmet is ideal for everyday use and for your weekend rides. Protection, comfort and performance in one helmet, choose Dragon and take your experience to the limit!',
-      category: 'HELMET',
-      brand: 'LS2',
-      price: 5700,
-      size: 'M',
-      condition: 'NEW',
-      location: 'WESTERN_CAPE',
-      status: 'ACTIVE',
-      sellerId: user1.id,
-      images: {
-        create: [
-          { url: '/listing-images/LS2_FF807_DRAGON_ENTHUM_1.png', order: 0 },
-        ],
-      },
-    },
-  })
+  
   await prisma.listing.create({
     data: {
       title: 'DJI Osmo Action 5 Pro Adventure Combo',
