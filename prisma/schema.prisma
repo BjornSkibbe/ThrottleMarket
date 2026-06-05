@@ -65,7 +65,7 @@ model VerificationToken {
 
 model Listing {
   id             String             @id @default(cuid())
-  title          String?
+  title          String
   description    String
   category       Category
   price          Int
@@ -275,6 +275,7 @@ enum Model {
   YZF_R3
   YZF_R6
   YZF_R7
+  YZF_R9
   YZF_R1
   MT03
   MT07
