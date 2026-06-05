@@ -28,7 +28,7 @@ async function main() {
     update: {},
     create: {
       email: 'demo1@example.com',
-      name: 'Ethan Mercer',
+      name: 'Tyler Durden',
       password: hashedPassword,
       location: 'WESTERN_CAPE',
     },
@@ -52,7 +52,7 @@ async function main() {
       email: 'demo3@example.com',
       name: 'Daniel Voss',
       password: hashedPassword,
-      location: 'WESTERN_CAPE',
+      location: 'EASTERN_CAPE',
     },
   })
 
@@ -62,25 +62,25 @@ async function main() {
 
   const motorcycle1 = await prisma.listing.create({
     data: {
-      title: 'CBR600RR',
+      title: '2026 Yamaha YZF-R9',
       description:
-        'Excellent condition 2023 Honda CBR600RR with only 2,500 miles. Garage kept, never dropped. Full service history available. Comes with OEM and aftermarket exhaust.',
+        "The R9 takes proven race-derived technology and combines it with the critically acclaimed, triple cylinder engine platform which has revolutionised the Yamaha brand over the last decade. The marriage of this famously high-torque powerplant and Yamaha's renowned race-precision handling creates a perfectly balanced Supersport model worthy of its status as the R Series flagship.",
       category: 'MOTORCYCLE',
-      brand: 'HONDA',
-      price: 125000,
+      brand: 'YAMAHA',
+      price: 285000,
       condition: 'NEW',
-      location: 'EASTERN_CAPE',
-      status: 'SOLD',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
       sellerId: user1.id,
 
       images: {
         create: [
           {
-            url: 'https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=800',
+            url: '/motorcycle-images/YAMAHA-YZF-R9_1.png',
             order: 0,
           },
           {
-            url: 'https://images.unsplash.com/photo-1558981359-219d6364c9c8?w=800',
+            url: '/motorcycle-images/YAMAHA-YZF-R9_2.png',
             order: 1,
           },
         ],
@@ -88,11 +88,11 @@ async function main() {
 
       motorcycle: {
         create: {
-          model: 'CBR600RR',
+          model: 'YZF_R9',
           type: 'SUPERSPORT',
-          year: 2023,
-          mileage: 2500,
-          engineSize: 600,
+          year: 2026,
+          mileage: 0,
+          engineSize: 890,
         },
       },
     },
@@ -100,22 +100,64 @@ async function main() {
 
   const motorcycle2 = await prisma.listing.create({
     data: {
-      title: '2023 Triumph Street Triple 765',
+      title: '2026 Yamaha YZF-R7',
       description:
-        'The Triumph Street Triple 765 is a high-performance naked streetfighter motorcycle widely considered the benchmark in the middleweight class.',
+        "Yamaha's proven 689cc liquid-cooled, inline 2-cylinder DOHC fuel-injected CP2 engine delivers excellent power and performance throughout the rpm range for an exhilarating ride and a true supersport experience. Its 270-degree crankshaft delivers linear torque for exciting acceleration and limited vibration.",
       category: 'MOTORCYCLE',
-      brand: 'TRIUMPH',
-      price: 149000,
-      condition: 'USED',
+      brand: 'YAMAHA',
+      price: 189950,
+      condition: 'NEW',
       location: 'WESTERN_CAPE',
       status: 'ACTIVE',
-      sellerId: user2.id,
+      sellerId: user1.id,
 
       images: {
         create: [
           {
-            url: '/motorcycle-images/TRIUMPH-STREET-TRIPLE-765.png',
+            url: '/motorcycle-images/YAMAHA-YZF-R7_1.png',
             order: 0,
+          },
+          {
+            url: '/motorcycle-images/YAMAHA-YZF-R7_2.png',
+            order: 1,
+          },
+        ],
+      },
+
+      motorcycle: {
+        create: {
+          model: 'YZF_R7',
+          type: 'SUPERSPORT',
+          year: 2026,
+          mileage: 0,
+          engineSize: 689,
+        },
+      },
+    },
+  })
+
+  await prisma.listing.create({
+    data: {
+      title: '2026 Yamaha YZF-R3',
+      description:
+        'Featuring flowing bodywork and ergonomics inspired by the MotoGP® YZR-M1®, complemented by new colors and graphics, the YZF-R3® is sleek, aerodynamic and refined.',
+      category: 'MOTORCYCLE',
+      brand: 'YAMAHA',
+      price: 129950,
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+
+      images: {
+        create: [
+          {
+            url: '/motorcycle-images/YAMAHA-YZF-R3_1.png',
+            order: 0,
+          },
+          {
+            url: '/motorcycle-images/YAMAHA-YZF-R3_2.png',
+            order: 1,
           },
         ],
       },
@@ -134,13 +176,13 @@ async function main() {
 
   await prisma.listing.create({
     data: {
-      title: '2025 Yamaha MT-07',
+      title: '2026 Yamaha MT-07',
       description:
         'The latest MT-07 features radially mounted front brake calipers, inverted forks and lightweight SpinForged wheels.',
       category: 'MOTORCYCLE',
       brand: 'YAMAHA',
-      price: 139000,
-      condition: 'USED',
+      price: 189500,
+      condition: 'NEW',
       location: 'WESTERN_CAPE',
       status: 'ACTIVE',
       sellerId: user3.id,
@@ -148,19 +190,19 @@ async function main() {
       images: {
         create: [
           {
-            url: '/motorcycle-images/YAMAHA-MT07_1.png',
+            url: '/motorcycle-images/YAMAHA_MT07_1.png',
             order: 0,
           },
           {
-            url: '/motorcycle-images/YAMAHA-MT07_2.png',
+            url: '/motorcycle-images/YAMAHA_MT07_2.png',
             order: 1,
           },
           {
-            url: '/motorcycle-images/YAMAHA-MT07_3.png',
+            url: '/motorcycle-images/YAMAHA_MT07_3.png',
             order: 2,
           },
           {
-            url: '/motorcycle-images/YAMAHA-MT07_4.png',
+            url: '/motorcycle-images/YAMAHA_MT07_4.png',
             order: 3,
           },
         ],
@@ -195,15 +237,15 @@ async function main() {
       images: {
         create: [
           {
-            url: '/listing-images/SHARK-D-SKWAL-3_1.png',
+            url: '/listing-images/SHARK_D-SKWAL_3_1.png',
             order: 0,
           },
           {
-            url: '/listing-images/SHARK-D-SKWAL-3_2.png',
+            url: '/listing-images/SHARK_D-SKWAL_3_2.png',
             order: 1,
           },
           {
-            url: '/listing-images/SHARK-D-SKWAL-3_3.png',
+            url: '/listing-images/SHARK_D-SKWAL_3_3.png',
             order: 2,
           },
         ],
@@ -225,7 +267,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/RST-S1-PANTS_1.png', order: 0 },
+          { url: '/listing-images/RST_S1_PANTS_1.png', order: 0 },
         ],
       },
     },
@@ -244,7 +286,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/RST-S1-MESH-D3O-TEXTILE-JACKET_1.png', order: 0 },
+          { url: '/listing-images/RST_S1_MESH_D3O_TEXTILE_JACKET_1.png', order: 0 },
         ],
       },
     },
@@ -263,7 +305,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/CARDO-NEO.png', order: 0 },
+          { url: '/listing-images/CARDO_NEO.png', order: 0 },
         ],
       },
     },
@@ -281,7 +323,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/CARDO-FREECOM-4X.png', order: 0 },
+          { url: '/listing-images/CARDO_FREECOM_4X.png', order: 0 },
         ],
       },
     },
@@ -300,7 +342,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/LS2-FF807-DRAGON-CM_1.png', order: 0 },
+          { url: '/listing-images/LS2_FF807_DRAGON_CM_1.png', order: 0 },
         ],
       },
     },
@@ -319,7 +361,7 @@ async function main() {
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/LS2-FF807-DRAGON-ENTHUM_1.png', order: 0 },
+          { url: '/listing-images/LS2_FF807_DRAGON_ENTHUM_1.png', order: 0 },
         ],
       },
     },
@@ -330,14 +372,14 @@ async function main() {
       description: ' ',
       category: 'ACCESSORIES',
       brand: 'DJI',
-      price: 9899,
+      price: 10995,
       condition: 'NEW',
       location: 'WESTERN_CAPE',
       status: 'ACTIVE',
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/DJI-OSMO-ACTION-5-PRO-ADVENTURE-COMBO_1.png', order: 0 },
+          { url: '/listing-images/DJI_OSMO_ACTION_5_PRO_ADVENTURE_COMBO_1.png', order: 0 },
         ],
       },
     },
@@ -348,14 +390,14 @@ async function main() {
       description: ' ',
       category: 'ACCESSORIES',
       brand: 'DJI',
-      price: 9899,
+      price: 8895,
       condition: 'NEW',
       location: 'WESTERN_CAPE',
       status: 'ACTIVE',
       sellerId: user1.id,
       images: {
         create: [
-          { url: '/listing-images/DJI-OSMO-ACTION-5-PRO-STANDARD-COMBO_1.png', order: 0 },
+          { url: '/listing-images/DJI_OSMO_ACTION_5_PRO_STANDARD_COMBO_1.png', order: 0 },
         ],
       },
     },
@@ -375,16 +417,16 @@ async function main() {
     images: {
       create: [
         {
-          url: '/listing-images/GAERNE-GP1-EVO-WBY_1.png', order: 0,
+          url: '/listing-images/GAERNE_GP1_EVO_WBY_1.png', order: 0,
         },
         {
-          url: '/listing-images/GAERNE-GP1-EVO-WBY_2.png', order: 1,
+          url: '/listing-images/GAERNE_GP1_EVO_WBY_2.png', order: 1,
         },
         {
-          url: '/listing-images/GAERNE-GP1-EVO-WBY_3.png', order: 2,
+          url: '/listing-images/GAERNE_GP1_EVO_WBY_3.png', order: 2,
         },
         {
-          url: '/listing-images/GAERNE-GP1-EVO-WBY_4.png', order: 3,
+          url: '/listing-images/GAERNE_GP1_EVO_WBY_4.png', order: 3,
         },
         
       ],
@@ -405,7 +447,7 @@ await prisma.listing.create({
     sellerId: user1.id,
     images: {
       create: [
-        { url: '/listing-images/ALPINESTARS-SMX-PLUS-BLACK_1.png', order: 0 },
+        { url: '/listing-images/ALPINESTARS_SMX_PLUS_BLACK_1.png', order: 0 },
       ],
     },
   },
@@ -424,7 +466,7 @@ await prisma.listing.create({
     sellerId: user1.id,
     images: {
       create: [
-        { url: '/listing-images/ALPINESTARS-SP3-GLOVES_1.png', order: 0 },
+        { url: '/listing-images/ALPINESTARS_SP3_GLOVES_1.png', order: 0 },
       ],
     },
   },
