@@ -530,6 +530,65 @@ await prisma.listing.create({
 })
 await prisma.listing.create({
   data: {
+    title: 'RST Tractech Evo D3O',
+    description: 'The Tractech Evo D3O sets the benchmark for safety, comfort, and performance. Featuring a new footbed profile for a narrower forefoot, easier shifting, a durable TPU toe slider, updated motion panels, and D3O® protectors in the shin and ankle areas, these boots deliver maximum protection. With a re-profiled upper, polycarbonate anti-twist shank, and perforated leather, they are lightweight, breathable, and perfect for the racetrack.',
+    category: 'BOOTS',
+    brand: 'RST',
+    price: 4495,
+    size: 'EU44_UK9',
+    condition: 'NEW',
+    location: 'WESTERN_CAPE',
+    status: 'ACTIVE',
+    sellerId: user1.id,
+    images: {
+      create: [
+        { url: '/listing-images/Boots/RST_TRACTECH_EVO_D3O_1.png', order: 0 },
+      ],
+    },
+  },
+})
+await prisma.listing.create({
+  data: {
+    title: 'Berik Shaft 2.0',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    category: 'BOOTS',
+    brand: 'BERIK',
+    price: 4495,
+    size: 'EU45_UK10',
+    condition: 'NEW',
+    location: 'WESTERN_CAPE',
+    status: 'ACTIVE',
+    sellerId: user1.id,
+    images: {
+      create: [
+        { url: '/listing-images/Boots/BERIK_SHAFT_2.0_1.png', order: 0 },
+        { url: '/listing-images/Boots/BERIK_SHAFT_2.0_2.png', order: 1 },
+      ],
+    },
+  },
+})
+await prisma.listing.create({
+  data: {
+    title: 'Berik Donington',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    category: 'BOOTS',
+    brand: 'BERIK',
+    price: 4995,
+    size: 'EU46_UK11',
+    condition: 'NEW',
+    location: 'WESTERN_CAPE',
+    status: 'ACTIVE',
+    sellerId: user1.id,
+    images: {
+      create: [
+        { url: '/listing-images/Boots/BERIK_DONINGTON_1.png', order: 0 },
+        { url: '/listing-images/Boots/BERIK_DONINGTON_2.png', order: 1 },
+      ],
+    },
+  },
+})
+await prisma.listing.create({
+  data: {
     title: 'Alpinestars SP3',
     description: 'Derived from Alpinestars involvement in top-level racing, the long cuff, SP-3 Gloves are packed with many race-inspired performance features. Accordion panels on the thumb and finger bridge enhance flexibility and control, while the pre-curved construction ensures a natural, ergonomic fit to reduce hand fatigue and improve freedom of movement. Constructed from full goat leather with padded reinforcements, these gloves deliver exceptional durability and abrasion resistance, ensuring lasting comfort and protection for the road.',
     category: 'GLOVES',
@@ -543,6 +602,26 @@ await prisma.listing.create({
     images: {
       create: [
         { url: '/listing-images/Gloves/ALPINESTARS_SP3_GLOVES_1.png', order: 0 },
+      ],
+    },
+  },
+})
+await prisma.listing.create({
+  data: {
+    title: 'Berik Thunar Evo',
+    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+    category: 'GLOVES',
+    brand: 'BERIK',
+    price: 2195,
+    size: 'L',
+    condition: 'NEW',
+    location: 'WESTERN_CAPE',
+    status: 'ACTIVE',
+    sellerId: user1.id,
+    images: {
+      create: [
+        { url: '/listing-images/Gloves/BERIK_THUNAR_EVO_1.png', order: 0 },
+        { url: '/listing-images/Gloves/BERIK_THUNAR_EVO_2.png', order: 1 },
       ],
     },
   },
