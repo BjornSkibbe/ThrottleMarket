@@ -77,6 +77,9 @@ export function buildWhereClauseWithoutFilter(
   const whereWithoutFilter = { ...where }
   
   switch (filterToRemove) {
+    case 'category':
+      delete whereWithoutFilter.category
+      break
     case 'brand':
       delete whereWithoutFilter.brand
       break
@@ -88,6 +91,9 @@ export function buildWhereClauseWithoutFilter(
       break
     case 'type':
       delete whereWithoutFilter.motorcycle
+      break
+    case 'size':
+      delete whereWithoutFilter.size
       break
   }
   
