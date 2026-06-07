@@ -73,6 +73,7 @@ async function main() {
       condition: 'NEW',
       location: 'WESTERN_CAPE',
       status: 'ACTIVE',
+      isFeatured: true,
       sellerId: user1.id,
 
       images: {
@@ -102,6 +103,7 @@ async function main() {
   const motorcycle2 = await prisma.listing.create({
     data: {
       title: '2026 Yamaha YZF-R7',
+      isFeatured: true,
       description:
         "Yamaha's proven 689cc liquid-cooled, inline 2-cylinder DOHC fuel-injected CP2 engine delivers excellent power and performance throughout the rpm range for an exhilarating ride and a true supersport experience. Its 270-degree crankshaft delivers linear torque for exciting acceleration and limited vibration.",
       category: 'MOTORCYCLE',
@@ -184,6 +186,7 @@ async function main() {
       condition: 'NEW',
       location: 'WESTERN_CAPE',
       status: 'ACTIVE',
+      isFeatured: true,
       sellerId: user3.id,
 
       images: {

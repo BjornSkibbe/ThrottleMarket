@@ -3,7 +3,7 @@ import { prisma } from '@/lib/prisma'
 
 export async function getFeaturedListings() {
   const listings = await prisma.listing.findMany({
-    where: { status: 'ACTIVE' },
+    where: { status: 'ACTIVE', isFeatured: true },
     include: {
       images: {
         orderBy: { order: 'asc' },
