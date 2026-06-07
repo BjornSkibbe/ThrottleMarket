@@ -23,6 +23,8 @@ async function main() {
   // Create sample users
   const hashedPassword = await bcrypt.hash('password123', 12)
 
+  // USERS
+
   const user1 = await prisma.user.upsert({
     where: { email: 'demo1@example.com' },
     update: {},
@@ -33,7 +35,6 @@ async function main() {
       location: 'WESTERN_CAPE',
     },
   })
-
   const user2 = await prisma.user.upsert({
     where: { email: 'demo2@example.com' },
     update: {},
@@ -44,7 +45,6 @@ async function main() {
       location: 'GAUTENG',
     },
   })
-
   const user3 = await prisma.user.upsert({
     where: { email: 'demo3@example.com' },
     update: {},
@@ -59,6 +59,8 @@ async function main() {
   console.log('Created users')
 
   // Create sample listings
+
+  // MOTORCYCLES
 
   const motorcycle1 = await prisma.listing.create({
     data: {
@@ -97,7 +99,6 @@ async function main() {
       },
     },
   })
-
   const motorcycle2 = await prisma.listing.create({
     data: {
       title: '2026 Yamaha YZF-R7',
@@ -135,7 +136,6 @@ async function main() {
       },
     },
   })
-
   await prisma.listing.create({
     data: {
       title: '2026 Yamaha YZF-R3',
@@ -173,7 +173,6 @@ async function main() {
       },
     },
   })
-
   await prisma.listing.create({
     data: {
       title: '2026 Yamaha MT-09 SP',
@@ -219,7 +218,6 @@ async function main() {
       },
     },
   })
-
   await prisma.listing.create({
     data: {
       title: '2026 Yamaha MT-07',
@@ -265,6 +263,8 @@ async function main() {
       },
     },
   })
+
+  // HELMETS
 
   const helmetListing = await prisma.listing.create({
     data: {
@@ -350,7 +350,6 @@ async function main() {
       },
     },
   })
-
   await prisma.listing.create({
     data: {
       title: 'Nolan N60-6 Sport Dark Edition',
@@ -373,6 +372,8 @@ async function main() {
       },
     },
   })
+  
+  // PANTS
 
   await prisma.listing.create({
     data: {
@@ -393,6 +394,9 @@ async function main() {
       },
     },
   })
+
+  // JACKET
+
   await prisma.listing.create({
     data: {
       title: 'RST S-1 Mesh D3O Textile',
@@ -412,6 +416,8 @@ async function main() {
       },
     },
   })
+
+  // ACCESSORIES
 
   await prisma.listing.create({
     data: {
@@ -449,7 +455,6 @@ async function main() {
       },
     },
   })
-  
   await prisma.listing.create({
     data: {
       title: 'DJI Osmo Action 5 Pro Adventure Combo',
@@ -487,6 +492,45 @@ async function main() {
     },
   })
   await prisma.listing.create({
+    data: {
+      title: 'DJI Osmo 360 Adventure Combo',
+      description: 'The DJI Osmo 360 Action Camera Standard Combo is the first 360° camera from DJI, enabling cinema-quality 360° video and 8K stills. With dual wide-angle lenses, you are able to capture 360° angles, combined with a large 1" sensor that captures 8K30 video and 120MP stills. A wide f/1.9 maximum aperture dramatically increases light intake, allowing for crisp and bright capture in low-light conditions.',
+      category: 'ACCESSORIES',
+      brand: 'DJI',
+      price: 13395,
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Accessories/DJI_OSMO_360_ADVENTURE_COMBO_1.png', order: 0 },
+        ],
+      },
+    },
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'DJI Lito X1 Fly More Combo with RC 2 Controller',
+      description: 'The DJI Lito X1 Fly More Combo with RC 2 Controller is a beginner-focused drone. With its folding design, a built-in screen controller, and some additional accessories to keep you in the air for longer.',
+      category: 'ACCESSORIES',
+      brand: 'DJI',
+      price: 12695,
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Accessories/DJI_LITO_X1_FLY_MORE_COMBO_1.png', order: 0 },
+        ],
+      },
+    },
+  })
+
+  // BOOTS
+
+  await prisma.listing.create({
   data: {
     title: 'Gaerne GP1 Evo',
     description: `The GP1 EVO racing boots epitomize over sixty years of Italian excellence and passion in the thrilling world of racing. Representing the pinnacle of the Racing line, the GP1 EVO motorcycle boot is the result of collaboration between Gaerne's R&D and professional riders, standing as a testament to the company’s commitment to innovation and performance.`,
@@ -508,125 +552,127 @@ async function main() {
       ],
     },
   },
-})
-await prisma.listing.create({
-  data: {
-    title: 'Alpinestars SMX Plus V2',
-    description: 'The SMX Plus v2 Boot perfectly blends sleek sports styling with advanced protection features developed in Alpinestars performance footwear department. The durable and light microfiber upper is reinforced with a rugged polymer protector and the exclusive Multi-Link Control (MLC) system prevents ankle torsion while offering freedom of movement.',
-    category: 'BOOTS',
-    brand: 'ALPINESTARS',
-    price: 9300,
-    size: 'EU43_UK8',
-    condition: 'NEW',
-    location: 'WESTERN_CAPE',
-    status: 'ACTIVE',
-    sellerId: user1.id,
-    images: {
-      create: [
-        { url: '/listing-images/Boots/ALPINESTARS_SMX_PLUS_BLACK_1.png', order: 0 },
-      ],
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'Alpinestars SMX Plus V2',
+      description: 'The SMX Plus v2 Boot perfectly blends sleek sports styling with advanced protection features developed in Alpinestars performance footwear department. The durable and light microfiber upper is reinforced with a rugged polymer protector and the exclusive Multi-Link Control (MLC) system prevents ankle torsion while offering freedom of movement.',
+      category: 'BOOTS',
+      brand: 'ALPINESTARS',
+      price: 9300,
+      size: 'EU43_UK8',
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Boots/ALPINESTARS_SMX_PLUS_BLACK_1.png', order: 0 },
+        ],
+      },
     },
-  },
-})
-await prisma.listing.create({
-  data: {
-    title: 'RST Tractech Evo D3O',
-    description: 'The Tractech Evo D3O sets the benchmark for safety, comfort, and performance. Featuring a new footbed profile for a narrower forefoot, easier shifting, a durable TPU toe slider, updated motion panels, and D3O® protectors in the shin and ankle areas, these boots deliver maximum protection. With a re-profiled upper, polycarbonate anti-twist shank, and perforated leather, they are lightweight, breathable, and perfect for the racetrack.',
-    category: 'BOOTS',
-    brand: 'RST',
-    price: 4495,
-    size: 'EU44_UK9',
-    condition: 'NEW',
-    location: 'WESTERN_CAPE',
-    status: 'ACTIVE',
-    sellerId: user1.id,
-    images: {
-      create: [
-        { url: '/listing-images/Boots/RST_TRACTECH_EVO_D3O_1.png', order: 0 },
-      ],
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'RST Tractech Evo D3O',
+      description: 'The Tractech Evo D3O sets the benchmark for safety, comfort, and performance. Featuring a new footbed profile for a narrower forefoot, easier shifting, a durable TPU toe slider, updated motion panels, and D3O® protectors in the shin and ankle areas, these boots deliver maximum protection. With a re-profiled upper, polycarbonate anti-twist shank, and perforated leather, they are lightweight, breathable, and perfect for the racetrack.',
+      category: 'BOOTS',
+      brand: 'RST',
+      price: 4495,
+      size: 'EU44_UK9',
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Boots/RST_TRACTECH_EVO_D3O_1.png', order: 0 },
+        ],
+      },
     },
-  },
-})
-await prisma.listing.create({
-  data: {
-    title: 'Berik Shaft 2.0',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    category: 'BOOTS',
-    brand: 'BERIK',
-    price: 4495,
-    size: 'EU45_UK10',
-    condition: 'NEW',
-    location: 'WESTERN_CAPE',
-    status: 'ACTIVE',
-    sellerId: user1.id,
-    images: {
-      create: [
-        { url: '/listing-images/Boots/BERIK_SHAFT_2.0_1.png', order: 0 },
-        { url: '/listing-images/Boots/BERIK_SHAFT_2.0_2.png', order: 1 },
-      ],
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'Berik Shaft 2.0',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      category: 'BOOTS',
+      brand: 'BERIK',
+      price: 4495,
+      size: 'EU45_UK10',
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Boots/BERIK_SHAFT_2.0_1.png', order: 0 },
+          { url: '/listing-images/Boots/BERIK_SHAFT_2.0_2.png', order: 1 },
+        ],
+      },
     },
-  },
-})
-await prisma.listing.create({
-  data: {
-    title: 'Berik Donington',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    category: 'BOOTS',
-    brand: 'BERIK',
-    price: 4995,
-    size: 'EU46_UK11',
-    condition: 'NEW',
-    location: 'WESTERN_CAPE',
-    status: 'ACTIVE',
-    sellerId: user1.id,
-    images: {
-      create: [
-        { url: '/listing-images/Boots/BERIK_DONINGTON_1.png', order: 0 },
-        { url: '/listing-images/Boots/BERIK_DONINGTON_2.png', order: 1 },
-      ],
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'Berik Donington',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+      category: 'BOOTS',
+      brand: 'BERIK',
+      price: 4995,
+      size: 'EU46_UK11',
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Boots/BERIK_DONINGTON_1.png', order: 0 },
+          { url: '/listing-images/Boots/BERIK_DONINGTON_2.png', order: 1 },
+        ],
+      },
     },
-  },
-})
-await prisma.listing.create({
-  data: {
-    title: 'Alpinestars SP3',
-    description: 'Derived from Alpinestars involvement in top-level racing, the long cuff, SP-3 Gloves are packed with many race-inspired performance features. Accordion panels on the thumb and finger bridge enhance flexibility and control, while the pre-curved construction ensures a natural, ergonomic fit to reduce hand fatigue and improve freedom of movement. Constructed from full goat leather with padded reinforcements, these gloves deliver exceptional durability and abrasion resistance, ensuring lasting comfort and protection for the road.',
-    category: 'GLOVES',
-    brand: 'ALPINESTARS',
-    price: 1995,
-    size: 'M',
-    condition: 'NEW',
-    location: 'WESTERN_CAPE',
-    status: 'ACTIVE',
-    sellerId: user1.id,
-    images: {
-      create: [
-        { url: '/listing-images/Gloves/ALPINESTARS_SP3_GLOVES_1.png', order: 0 },
-      ],
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'Alpinestars Supertech R',
+      description: 'The Alpinestars Supertech R Vented Boot is the ultimate racing boot, trusted by top riders across the globe. Almost every element has been upgraded to push performance, comfort, and protection to new heights. Designed with extensive perforations for maximum airflow, it incorporates direct feedback from elite racing. Updates include a redesigned front flex zone, rear bellow, shin plate, inner bootie, and more — all working together to deliver class-leading fit, breathability, and durability. Whether on the track or chasing peak performance on the road, the Supertech R Vented Boot sets a new benchmark.',
+      category: 'BOOTS',
+      brand: 'ALPINESTARS',
+      price: 14895,
+      size: 'EU43_UK8',
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Boots/ALPINESTARS_SUPERTECH_R_1.png', order: 0 },
+          { url: '/listing-images/Boots/ALPINESTARS_SUPERTECH_R_2.png', order: 1 },
+        ],
+      },
     },
-  },
-})
-await prisma.listing.create({
-  data: {
-    title: 'Berik Thunar Evo',
-    description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    category: 'GLOVES',
-    brand: 'BERIK',
-    price: 2195,
-    size: 'L',
-    condition: 'NEW',
-    location: 'WESTERN_CAPE',
-    status: 'ACTIVE',
-    sellerId: user1.id,
-    images: {
-      create: [
-        { url: '/listing-images/Gloves/BERIK_THUNAR_EVO_1.png', order: 0 },
-        { url: '/listing-images/Gloves/BERIK_THUNAR_EVO_2.png', order: 1 },
-      ],
-    },
-  },
-})
+  })
 
+  // GLOVES
+
+  await prisma.listing.create({
+    data: {
+      title: 'Alpinestars SP3',
+      description: 'Derived from Alpinestars involvement in top-level racing, the long cuff, SP-3 Gloves are packed with many race-inspired performance features. Accordion panels on the thumb and finger bridge enhance flexibility and control, while the pre-curved construction ensures a natural, ergonomic fit to reduce hand fatigue and improve freedom of movement. Constructed from full goat leather with padded reinforcements, these gloves deliver exceptional durability and abrasion resistance, ensuring lasting comfort and protection for the road.',
+      category: 'GLOVES',
+      brand: 'ALPINESTARS',
+      price: 1995,
+      size: 'M',
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Gloves/ALPINESTARS_SP3_GLOVES_1.png', order: 0 },
+        ],
+      },
+    },
+  })
 
   console.log('Created listings')
 
