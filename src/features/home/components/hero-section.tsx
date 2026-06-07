@@ -14,7 +14,7 @@ export function HeroSection() {
       </div>
       <div className="container mx-auto relative z-10">
         <div className="max-w-3xl mx-auto text-center space-y-4">
-          <h1 className="text-6xl font-black tracking-tight text-primary flex flex-col sm:flex-row text-center sm:justify-center">
+          <h1 className="text-6xl font-black italic tracking-tight text-primary flex flex-col sm:flex-row text-center sm:justify-center">
             Find It. <span className="text-accent">Ride It.</span> Love It.
           </h1>
           <p className="text-md sm:text-lg font-bold tracking-tight">
