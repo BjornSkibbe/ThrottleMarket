@@ -64,6 +64,8 @@ export function buildOrderByClause(sortBy: string): Prisma.ListingOrderByWithRel
       return { price: 'asc' }
     case 'price-desc':
       return { price: 'desc' }
+    case 'title-asc':
+      return { title: 'asc' }
     case 'newest':
     default:
       return { createdAt: 'desc' }
