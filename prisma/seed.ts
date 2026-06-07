@@ -394,6 +394,7 @@ async function main() {
       },
     },
   })
+  
 
   // JACKET
 
@@ -412,6 +413,65 @@ async function main() {
       images: {
         create: [
           { url: '/listing-images/Jacket/RST_S1_MESH_D3O_TEXTILE_JACKET_1.png', order: 0 },
+        ],
+      },
+    },
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'RST S-1 LEATHER CE',
+      description: 'The S-1 CE Men’s Leather Race Suit Jacket represents the pinnacle of racing gear, meticulously designed for both practicality and style. Equipped with waist adjusters and neoprene comfort cuffs, this jacket combines tailored fit and performance. Sporting shoulder sliders and a 360-degree zip for compatibility with S-1 CE Men’s Leather Jeans, it offers an elevated racing experience. Elevate your race game with this sleek and protective gear that embodies the essence of high-speed precision.',
+      category: 'JACKET',
+      brand: 'RST',
+      size: 'XS',
+      price: 6999,
+      condition: 'NEW',
+      location: 'GAUTENG',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Jacket/RST_S1_LEATHER_CE_JACKET_1.png', order: 0 },
+        ],
+      },
+    },
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'Alpinestars T-SPS Air',
+      description: 'The T-SPS Air Jacket features an advanced poly-fabric main shell for high levels of tear and abrasion resistance. Featuring air vents, and large mesh panels on the chest, back and arms, the T-SPS Air Jacket is ideal for a wide range of weather conditions. With class-leading Nucleon Flex Plus protection on the shoulder and elbow and the option to upgrade with Alpinestars Nucleon chest and back protection, the T-SPS Air Jacket is ideal for urban riding.',
+      category: 'JACKET',
+      brand: 'ALPINESTARS',
+      size: 'XS',
+      price: 5399,
+      condition: 'NEW',
+      location: 'GAUTENG',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Jacket/ALPINESTARS_T_SPS_AIR_1.png', order: 0 },
+          { url: '/listing-images/Jacket/ALPINESTARS_T_SPS_AIR_2.png', order: 1 },
+        ],
+      },
+    },
+  })
+  await prisma.listing.create({
+    data: {
+      title: 'Alpinestars Faster V2 Leather',
+      description: 'A superbly styled sport riding garment with premium leather and extensive stretch paneling, the Faster v2 Jacket is brimming with protective and performance features.',
+      category: 'JACKET',
+      brand: 'ALPINESTARS',
+      size: 'S',
+      price: 10999,
+      condition: 'NEW',
+      location: 'WESTERN_CAPE',
+      status: 'ACTIVE',
+      sellerId: user1.id,
+      images: {
+        create: [
+          { url: '/listing-images/Jacket/ALPINESTARS_FASTER_V2_LEATHER_1.png', order: 0 },
+          { url: '/listing-images/Jacket/ALPINESTARS_FASTER_V2_LEATHER_2.png', order: 1 },
         ],
       },
     },
@@ -669,6 +729,7 @@ async function main() {
       images: {
         create: [
           { url: '/listing-images/Gloves/ALPINESTARS_SP3_GLOVES_1.png', order: 0 },
+          { url: '/listing-images/Gloves/ALPINESTARS_SP3_GLOVES_2.png', order: 1 },
         ],
       },
     },
@@ -848,3 +909,4 @@ main()
   .finally(async () => {
     await prisma.$disconnect()
   })
+
