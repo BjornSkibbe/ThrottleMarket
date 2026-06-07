@@ -14,7 +14,7 @@ export function SortSelect() {
     router.push(`/marketplace?${params.toString()}`)
   }
 
-  const currentSort = searchParams.get("sortBy") || "newest"
+  const currentSort = searchParams.get("sortBy") || "title-asc"
 
   return (
     <Select value={currentSort} onValueChange={updateSort}>

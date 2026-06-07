@@ -34,7 +34,7 @@ export default async function MarketplacePage({ searchParams }: MarketplacePageP
   const params = await searchParams
   const validatedParams = validateSearchParams(params)
   const filters = buildMarketplaceFilters(validatedParams)
-  const sortBy = validatedParams.sortBy || 'newest'
+  const sortBy = validatedParams.sortBy || 'title-asc'
 
   let listings: Listing[] = []
   let pagination: PaginatedListings['pagination'] | null = null
