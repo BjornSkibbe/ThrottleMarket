@@ -31,7 +31,7 @@ export function FilterButtonGroup({
             size="default"
             variant={activeValue === "" ? "accent" : "secondary"}
             onClick={() => onSelect("")}
-            className="text-xs"
+            className="text-xs w-fit px-6"
           >
             All
           </Button>
@@ -45,7 +45,7 @@ export function FilterButtonGroup({
               size="default"
               variant={isActive ? "accent" : "secondary"}
               onClick={() => onSelect(option)}
-              className="text-xs"
+              className="text-xs w-fit px-6"
             >
               {formatFn ? formatFn(option) : option}
             </Button>

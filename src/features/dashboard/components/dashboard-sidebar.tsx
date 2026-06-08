@@ -1,11 +1,11 @@
 "use client"
 
 import Link from "next/link"
-import { LayoutDashboard, Package, Heart, Eye, LogOut, PackageCheck, Plus, MessageSquare, Crown } from "lucide-react"
+import { LayoutDashboard, Package, Heart, Eye, LogOut, PackageCheck, Plus, Crown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { StatCard } from "@/components/stat-card"
-import { SidebarShell } from "./sidebar-shell"
-import { DashboardNavItem } from "./dashboard-nav-item"
+import { SidebarShell } from "@/components/sidebar-shell"
+import { DashboardNavItem } from "@/components/dashboard-nav-item"
 import type { LucideIcon } from "lucide-react"
 
 interface DashboardSidebarProps {

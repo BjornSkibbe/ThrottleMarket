@@ -1,7 +1,7 @@
 "use client"
 
 import { MessageSquare } from "lucide-react"
-import { SidebarShell } from "./sidebar-shell"
+import { SidebarShell } from "@/components/sidebar-shell"
 import { ConversationList } from "@/features/messaging/components/conversation-list"
 
 interface MessagingSidebarProps {

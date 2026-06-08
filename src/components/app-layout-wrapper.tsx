@@ -9,9 +9,9 @@ import {
 } from "@/components/ui/sidebar"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
-import { MarketplaceSidebar } from "@/components/marketplace-sidebar"
-import { DashboardSidebar } from "@/components/dashboard-sidebar"
-import { MessagingSidebar } from "@/components/messaging-sidebar"
+import { MarketplaceSidebar } from "@/features/marketplace/components/marketplace-sidebar"
+import { DashboardSidebar } from "@/features/dashboard/components/dashboard-sidebar"
+import { MessagingSidebar } from "@/features/messaging/components/messaging-sidebar"
 import { useSidebarContext } from "@/contexts/sidebar-props-context"
 
 export function AppLayoutWrapper({ children }: { children: React.ReactNode }) {

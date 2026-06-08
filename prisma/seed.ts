@@ -228,7 +228,7 @@ async function main() {
         'The latest MT-07 features radially mounted front brake calipers, inverted forks and lightweight SpinForged wheels.',
       category: 'MOTORCYCLE',
       brand: 'YAMAHA',
-      price: 189500,
+      price: 169500,
       condition: 'USED',
       location: 'WESTERN_CAPE',
       status: 'ACTIVE',
