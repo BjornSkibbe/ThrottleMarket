@@ -4,7 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Heart, Camera, Crown } from "lucide-react"
+import { Camera, Crown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { formatBrand, formatModel, formatSize } from "@/lib/formatters"
 import { ListingDetails } from "@/features/listings/components/listing-details"
@@ -82,20 +82,20 @@ export const ListingCard = memo(function ListingCard({ listing }: ListingCardPro
               SOLD
             </Badge>
           )}
-          <Button
-            size="icon"
-            variant="outline"
-            className={`rounded-full absolute top-2 right-2 z-10 transition-opacity duration-500 text-background hover:text-background ${
-              isFavorited ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-            }`}
-            onClick={(e) => {
-              e.preventDefault()
-              e.stopPropagation()
-              toggleFavorite.mutate(listing.id)
-            }}
-          >
-            <Crown className={`h-5 w-5 ${isFavorited ? "fill-background text-background" : ""}`} />
-          </Button>
+          {isFavorited && (
+            <Button
+              size="icon"
+              variant="outline"
+              className="rounded-full absolute top-2 right-2 z-10 text-background hover:text-background opacity-100"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                toggleFavorite.mutate(listing.id)
+              }}
+            >
+              <Crown className="h-5 w-5 fill-background text-background" />
+            </Button>
+          )}
         </div>
 
         <CardContent className="p-6">

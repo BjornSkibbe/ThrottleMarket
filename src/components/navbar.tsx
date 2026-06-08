@@ -41,7 +41,7 @@ export function Navbar() {
           <Button 
             size="icon-lg" 
             variant="ghost" 
-            className="text-accent hover:text-accent">
+            className="text-accent hover:text-accent/50">
             <ArrowLeft className="h-6 w-6" />
           </Button>
         </Link>
@@ -55,14 +55,17 @@ export function Navbar() {
       <Button
         size="icon-lg"
         variant="ghost"
-        className="text-accent hover:text-accent relative"
+        className="text-accent hover:text-accent/50 relative"
         onClick={toggleSidebar}
       >
         {isMessagingPage ? (
           <>
             <MessageSquare className="h-6 w-6" />
             {unreadCount > 0 && (
-              <span className="absolute top-1 right-1 h-2.5 w-2.5 rounded-full bg-destructive" />
+              <span className="absolute top-1 right-1 flex h-2.5 w-2.5 items-center justify-center">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+              </span>
             )}
           </>
         ) : (
@@ -133,7 +136,7 @@ export function Navbar() {
                         )}
                       </Link>
                     </DropdownMenuItem>
-                    <DropdownMenuItem asChild className="border-2 border-dashed">
+                    <DropdownMenuItem asChild className="border-2 border-dashed hover:border-accent">
                       <Link href="/listings/create" className="flex flex-col p-6 h-fit text-xs">
                         <Plus className="h-4 w-4" />
                         Create Listing

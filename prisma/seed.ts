@@ -223,13 +223,13 @@ async function main() {
   })
   await prisma.listing.create({
     data: {
-      title: '2026 Yamaha MT-07',
+      title: '2025 Yamaha MT-07',
       description:
         'The latest MT-07 features radially mounted front brake calipers, inverted forks and lightweight SpinForged wheels.',
       category: 'MOTORCYCLE',
       brand: 'YAMAHA',
       price: 189500,
-      condition: 'NEW',
+      condition: 'USED',
       location: 'WESTERN_CAPE',
       status: 'ACTIVE',
       sellerId: user3.id,
@@ -259,8 +259,8 @@ async function main() {
         create: {
           model: 'MT07',
           type: 'HYPER_NAKED',
-          year: 2021,
-          mileage: 7500,
+          year: 2025,
+          mileage: 2500,
           engineSize: 689,
         },
       },

@@ -27,6 +27,7 @@ interface ListingDetailsFieldsProps {
   setSize: (value: Size | "") => void
   status: ListingStatus | ""
   setStatus: (value: ListingStatus | "") => void
+  mode: "create" | "edit"
 }
 
 export function ListingDetailsFields({
@@ -48,6 +49,7 @@ export function ListingDetailsFields({
   setSize,
   status,
   setStatus,
+  mode,
 }: ListingDetailsFieldsProps) {
   
   return (
@@ -181,11 +183,13 @@ export function ListingDetailsFields({
               <SelectValue placeholder={FORM_PLACEHOLDERS.status} />
             </SelectTrigger>
             <SelectContent>
-              {Object.values(LISTING_STATUS).map((s) => (
-                <SelectItem key={s} value={s}>
-                  {formatListingStatus(s as ListingStatus)}
-                </SelectItem>
-              ))}
+              {Object.values(LISTING_STATUS)
+                .filter((s) => mode === "edit" || s === "ACTIVE" || s === "DRAFT")
+                .map((s) => (
+                  <SelectItem key={s} value={s}>
+                    {formatListingStatus(s as ListingStatus)}
+                  </SelectItem>
+                ))}
             </SelectContent>
           </Select>
         </div>

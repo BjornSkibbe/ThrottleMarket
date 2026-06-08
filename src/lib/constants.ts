@@ -13,6 +13,7 @@ export const LISTING_STATUS = {
   ACTIVE: 'ACTIVE',
   SOLD: 'SOLD',
   PENDING: 'PENDING',
+  DRAFT: 'DRAFT',
 } as const
 
 export const CATEGORY_IMAGES: Record<keyof typeof CATEGORY, string> = {
@@ -303,7 +304,7 @@ export const MODEL_TO_TYPE: Record<string, string> = {
 // Category-to-brand mapping
 export const CATEGORY_TO_BRANDS: Record<string, string[]> = {
   MOTORCYCLE: ['YAMAHA', 'HONDA', 'SUZUKI', 'KAWASAKI', 'DUCATI', 'TRIUMPH', 'OTHER'],
-  HELMET: ['SHARK', 'ALPINESTARS', 'LS2'],
+  HELMET: ['SHARK', 'ALPINESTARS', 'LS2', 'NOLAN'],
   JACKET: ['RST', 'ALPINESTARS'],
   PANTS: ['RST', 'ALPINESTARS'],
   GLOVES: ['RST', 'BERIK', 'ALPINESTARS'],

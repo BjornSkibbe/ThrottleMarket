@@ -99,7 +99,7 @@ export function ConversationItem({ conversation, isActive, onClick, onRequestDel
         <Button
           variant="ghost"
           size="icon"
-          className="h-8 w-8 text-muted-foreground hover:text-accent opacity-0 group-hover/item:opacity-100 transition-opacity duration-300"
+          className="h-8 w-8 text-muted-foreground hover:text-accent opacity-70"
           onClick={handleDelete}
         >
           <Trash2 className="h-4 w-4" />

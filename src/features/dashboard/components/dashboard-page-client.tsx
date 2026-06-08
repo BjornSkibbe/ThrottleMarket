@@ -5,6 +5,7 @@ import { useSearchParams } from "next/navigation"
 import { useSidebarContext } from "@/contexts/sidebar-props-context"
 import { Tabs, TabsContent } from "@/components/ui/tabs"
 import { MyListingsTable } from "@/features/dashboard/components/my-listings-table"
+import { FavoritesTable } from "@/features/dashboard/components/favorites-table"
 import { EmptyState } from "@/components/empty-state"
 import { QueryPreservingPagination } from "@/components/query-preserving-pagination"
 import { Package, Heart, Eye } from "lucide-react"
@@ -100,7 +101,7 @@ export function DashboardPageClient({
         */}
         <TabsContent value="favorites" className="space-y-6 bg-muted/30 rounded-4xl p-6">
           {favoriteListings.length > 0 ? (
-            <MyListingsTable listings={favoriteListings} />
+            <FavoritesTable listings={favoriteListings} />
           ) : (
             <EmptyState 
               icon={Heart}

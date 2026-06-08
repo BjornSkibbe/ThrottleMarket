@@ -214,6 +214,7 @@ export default function ListingForm({ mode, listingId, initialData }: ListingFor
                   setLocation={(value) => setFormData({ ...formData, location: value })}
                   status={formData.status}
                   setStatus={(value) => setFormData({ ...formData, status: value })}
+                  mode={mode}
                 />
                 {/* 
                   MotorcycleDetailsFields 

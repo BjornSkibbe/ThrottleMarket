@@ -36,8 +36,8 @@ export function MessageBubble({ message, currentUserId }: MessageBubbleProps) {
         className={cn(
           'max-w-[70%] p-6',
           isOwn 
-            ? 'bg-primary text-primary-foreground' 
-            : 'bg-muted',
+            ? 'bg-accent text-background' 
+            : 'bg-muted/30',
           message.isOptimistic && 'opacity-50'
         )}
       >
