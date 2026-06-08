@@ -4,15 +4,16 @@ import { Button } from "@/components/ui/button"
 import { Crown, Pencil, Share2, Trash } from "lucide-react"
 import Link from "next/link"
 import { useUserFavorites, useToggleFavorite } from "@/features/listings/hooks/use-favorites"
+import { toast } from "@/hooks/use-toast"
+import { copyToClipboard } from "@/lib/clipboard"
 
 interface ManageListingButtonsProps {
   listingId: string
   isOwner: boolean
-  sellerId: string
   isAuthenticated: boolean
 }
 
-export function ManageListingButtons({ listingId, isOwner, sellerId, isAuthenticated }: ManageListingButtonsProps) {
+export function ManageListingButtons({ listingId, isOwner, isAuthenticated }: ManageListingButtonsProps) {
   const contactHref = isAuthenticated
     ? `/messaging?listingId=${listingId}`
     : `/auth/signin?callbackUrl=${encodeURIComponent(`/listings/${listingId}`)}`
@@ -24,6 +25,23 @@ export function ManageListingButtons({ listingId, isOwner, sellerId, isAuthentic
   const handleFavoriteClick = () => {
     if (!isAuthenticated) return
     toggleFavorite.mutate(listingId)
+  }
+
+  const handleShare = async () => {
+    const url = `${window.location.origin}/listings/${listingId}`
+    const success = await copyToClipboard(url)
+    if (success) {
+      toast({
+        title: "Link copied to clipboard",
+        description: "You can now share this listing with others",
+      })
+    } else {
+      toast({
+        title: "Failed to copy link",
+        description: "Please try again",
+        variant: "destructive",
+      })
+    }
   }
 
   return (
@@ -60,7 +78,7 @@ export function ManageListingButtons({ listingId, isOwner, sellerId, isAuthentic
         </Link>
       )}
       {/* Share */}
-      <Button variant="secondary" size="icon-lg">
+      <Button variant="secondary" size="icon-lg" onClick={handleShare}>
         <Share2 className="h-5 w-5" />
       </Button>
     </div>

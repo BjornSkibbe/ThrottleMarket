@@ -97,7 +97,6 @@ export default async function ListingDetailPage({ params }: ListingDetailPagePro
           <ManageListingButtons
             listingId={listing.id}
             isOwner={isOwner}
-            sellerId={listing.seller.id}
             isAuthenticated={!!session?.user}
           />
           {/* 
