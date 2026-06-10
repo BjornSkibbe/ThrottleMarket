@@ -133,7 +133,7 @@ export function Navbar() {
                       <DropdownMenuItem
                         key={item.href}
                         asChild
-                        className={item.isAction ? "border-2 border-dashed hover:bg-accent hover:border-accent hover:border-solid" : undefined}
+                        className={item.isAction ? "border-2 border-dashed hover:bg-accent" : undefined}
                       >
                         <Link href={item.href} className="relative flex flex-col p-6 h-fit text-sm">
                           <item.icon className="h-4 w-4" />

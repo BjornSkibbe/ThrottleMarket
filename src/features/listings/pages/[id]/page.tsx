@@ -87,10 +87,12 @@ export default async function ListingDetailPage({ params }: ListingDetailPagePro
             size={listing.size}
             location={listing.location}
             createdAt={listing.createdAt}
+            sellerName={listing.seller.name ?? "Unknown"}
+            sellerImage={listing.seller.image}
             motorcycle={listing.motorcycle}
           />
-          {/* 
-            ManageListingButtons COMPONENT 
+          {/*
+            ManageListingButtons COMPONENT
             Contact Seller Button or Edit/Delete Buttons if owner
             Add to favorites button + share button
           */}

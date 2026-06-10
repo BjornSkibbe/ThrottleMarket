@@ -24,7 +24,13 @@ export function ManageListingButtons({ listingId, isOwner, isAuthenticated }: Ma
 
   const handleFavoriteClick = () => {
     if (!isAuthenticated) return
-    toggleFavorite.mutate(listingId)
+    toggleFavorite.mutate(listingId, {
+      onSuccess: () => {
+        toast({
+          title: isFavorited ? "Removed from favorites" : "Added to favorites",
+        })
+      },
+    })
   }
 
   const handleShare = async () => {

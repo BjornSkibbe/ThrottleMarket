@@ -8,6 +8,7 @@ import { Camera, Crown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { formatBrand, formatModel, formatSize } from "@/lib/formatters"
 import { ListingDetails } from "@/features/listings/components/listing-details"
+import { toast } from "@/hooks/use-toast"
 import { Location, Category, Condition, Brand, Type, Model, Size } from "@/types"
 import { memo } from "react"
 import { useUserFavorites, useToggleFavorite } from "@/features/listings/hooks/use-favorites"
@@ -90,7 +91,11 @@ export const ListingCard = memo(function ListingCard({ listing }: ListingCardPro
               onClick={(e) => {
                 e.preventDefault()
                 e.stopPropagation()
-                toggleFavorite.mutate(listing.id)
+                toggleFavorite.mutate(listing.id, {
+                  onSuccess: () => {
+                    toast({ title: "Removed from favorites" })
+                  },
+                })
               }}
             >
               <Crown className="h-5 w-5 fill-background text-background" />

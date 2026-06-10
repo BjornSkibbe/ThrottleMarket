@@ -3,6 +3,7 @@ import { formatBrand, formatModel, formatPrice } from "@/lib/formatters"
 import { ListingLocationCreated } from "@/features/listings/components/listing-location-created"
 import { ListingBadges } from "@/features/listings/components/listing-badges"
 import { ListingTitle } from "@/features/listings/components/listing-title"
+import { SellerInfo } from "@/features/listings/components/seller-info"
 
 interface ListingDetailsSingleProps {
   condition: Condition
@@ -14,6 +15,8 @@ interface ListingDetailsSingleProps {
   size: Size | null
   location: Location
   createdAt: Date
+  sellerName: string
+  sellerImage?: string | null
   motorcycle?: {
     year: number | null
     model: Model
@@ -23,24 +26,26 @@ interface ListingDetailsSingleProps {
   } | null
 }
 
-export function ListingDetailsSingle({ 
-  condition, 
+export function ListingDetailsSingle({
+  condition,
   category,
-  brand, 
-  title, 
+  brand,
+  title,
   description,
-  price, 
+  price,
   size,
-  location, 
-  createdAt, 
+  location,
+  createdAt,
+  sellerName,
+  sellerImage,
   motorcycle
 }: ListingDetailsSingleProps) {
   return (
     <>
       <div className="flex flex-col gap-6">
-        {/* 
-          ListingBadges 
-          COMPONENT 
+        {/*
+          ListingBadges
+          COMPONENT
         */}
         <ListingBadges
           condition={condition}
@@ -48,9 +53,9 @@ export function ListingDetailsSingle({
           size={size}
           motorcycle={motorcycle}
         />
-        {/* 
-          ListingTitle 
-          COMPONENT 
+        {/*
+          ListingTitle
+          COMPONENT
         */}
         <ListingTitle
           motorcycle={motorcycle}
@@ -58,27 +63,35 @@ export function ListingDetailsSingle({
           brand={brand}
           className="text-2xl sm:text-5xl font-extrabold tracking-tight"
         />
-        {/* 
-          ListingLocationCreated 
-          COMPONENT 
+        {/*
+          ListingLocationCreated
+          COMPONENT
         */}
-        <ListingLocationCreated 
+        <ListingLocationCreated
           className="justify-start"
-          location={location} 
-          createdAt={createdAt}  
+          location={location}
+          createdAt={createdAt}
         />
-        {/* 
-          Price 
+        {/*
+          Price
         */}
         <p className="text-lg sm:text-2xl font-extrabold text-left">
           {formatPrice(price)}
         </p>
         {/*
-          Description 
+          Description
         */}
         <p className="whitespace-pre-wrap text-xs text-left tracking-wide leading-5 text-foreground/50 font-normal border-l-2 border-l-primary pl-6">
           {description}
         </p>
+        {/*
+          SellerInfo
+          COMPONENT
+        */}
+        <SellerInfo
+          name={sellerName}
+          image={sellerImage}
+        />
       </div>
     </>
   )

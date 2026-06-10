@@ -4,6 +4,8 @@
 
 A modern full-stack motorcycle and riding gear marketplace built with Next.js, TypeScript, Tailwind CSS, and Prisma.
 
+This is a side project I'm building for fun — a playground for trying out new ideas, sharpening my full-stack skills, and shipping features end-to-end.
+
 **Live Demo:** [throttle-market.vercel.app](https://throttle-market.vercel.app)
 
 ## Features
@@ -202,8 +204,30 @@ These items were listed as future enhancements and are now fully built:
 
 ## Coming Soon
 
+Features and improvements under consideration for future development:
+
+### Discovery & Buyer Experience
+- [ ] **Saved Searches with Alerts** — Notify users when new listings match their saved filters
+- [ ] **Price Drop Notifications** — Alert users when a favorited listing's price decreases
+- [ ] **Recently Viewed Section** — Surface previously viewed listings on the homepage and dashboard (data already tracked in Prisma)
+- [ ] **Compare Listings** — Side-by-side spec comparison tool for evaluating multiple listings
+
+### Trust & Transactions
 - [ ] **Seller Ratings & Reviews** — Post-transaction review system for buyers
-- [ ] **Rate Limiting & Spam Prevention** — Daily listing caps per user with admin review dashboard to prevent marketplace abuse
+- [ ] **Verified Seller Badges** — ID/document verification for high-trust sellers
+- [ ] **In-App Offers & Negotiation** — Buyers can submit offers; sellers accept, reject, or counter
+- [ ] **Motorcycle History Reports** — VIN checks or service history attachments on listings
+
+### Content & Listings
+- [ ] **Video Uploads** — Walk-around videos alongside photos in listing galleries
+- [ ] **Boost / Promoted Listings** — Pay to pin listings to the top of search results
+- [ ] **Seller Analytics Dashboard** — Views, favorites, and message conversion rates per listing
+
+### Platform & Quality of Life
+- [ ] **Rate Limiting & Spam Prevention** — Daily listing caps per user with admin review dashboard
+- [ ] **Push Notifications** — Browser and mobile alerts for messages, offers, and price drops
+- [ ] **Dark Mode Toggle** — Persistent user preference across sessions
+- [ ] **Admin Moderation Panel** — Reported listings, user bans, and content moderation queue
 
 ## What I Learned Building ThrottleMarket
 
