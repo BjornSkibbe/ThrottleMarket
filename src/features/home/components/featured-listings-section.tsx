@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Plus } from "lucide-react"
-import { ListingCard } from "@/features/listings/components/listing-card"
+import { FeaturedListingCard } from "./featured-listing-card"
 import { getFeaturedListings } from "@/features/listings/lib/listings"
 
 interface FeaturedListingsSectionProps {
@@ -20,7 +20,7 @@ export function FeaturedListingsSection({ listings }: FeaturedListingsSectionPro
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {listings.map((listing) => (
-                <ListingCard key={listing.id} listing={listing} />
+                <FeaturedListingCard key={listing.id} listing={listing} />
               ))}
             </div>
           </>

@@ -51,9 +51,11 @@ export function ChatWindow({ conversationId }: ChatWindowProps) {
 
   if (error) {
     return (
-      <div className="p-6 text-center text-muted-foreground border-2 border-border rounded-2xl">
-        <Frown className="mx-auto mb-2 h-8 w-8" />
-        Failed to load messages
+      <div className="flex flex-1 items-center justify-center min-h-[calc(100vh-90px)]">
+        <div className="p-6 text-center text-muted-foreground rounded-2xl">
+          <Frown className="mx-auto mb-2 h-8 w-8" />
+          Failed to load messages
+        </div>
       </div>
     )
   }

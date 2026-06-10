@@ -17,6 +17,22 @@ import { Bike, LayoutDashboard, Plus, Store, ArrowLeft, LogIn, LogOut, MessageSq
 import { useMemo } from "react"
 import { useSidebar } from "@/components/ui/sidebar"
 import { useConversations } from "@/features/messaging/hooks"
+import type { LucideIcon } from "lucide-react"
+
+interface NavItem {
+  href: string
+  icon: LucideIcon
+  label: string
+  showBadge?: boolean
+  isAction?: boolean
+}
+
+const NAV_ITEMS: NavItem[] = [
+  { href: "/marketplace-dashboard", icon: LayoutDashboard, label: "Dashboard" },
+  { href: "/marketplace", icon: Store, label: "Marketplace" },
+  { href: "/messaging", icon: MessageSquare, label: "Messages", showBadge: true },
+  { href: "/listings/create", icon: Plus, label: "Create Listing", isAction: true },
+]
 
 export function Navbar() {
   const { data: session } = useSession()
@@ -113,40 +129,28 @@ export function Navbar() {
                   </div>
                   <DropdownMenuSeparator />
                   <div className="py-3 space-y-3">
-                    <DropdownMenuItem asChild>
-                      <Link href="/marketplace-dashboard" className="flex flex-col p-6 h-fit text-xs">
-                        <LayoutDashboard className="h-4 w-4" />
-                        Dashboard
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/marketplace" className="flex flex-col p-6 h-fit text-xs">
-                        <Store className="h-4 w-4" />
-                        Marketplace
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild>
-                      <Link href="/messaging" className="relative flex flex-col p-6 h-fit text-xs">
-                        <MessageSquare className="h-4 w-4" />
-                        Messages
-                        {unreadCount > 0 && (
-                          <Badge variant="ghost" className="absolute top-2 right-2 ml-auto rounded-full w-5 h-5">
-                            {unreadCount}
-                          </Badge>
-                        )}
-                      </Link>
-                    </DropdownMenuItem>
-                    <DropdownMenuItem asChild className="border-2 border-dashed hover:border-accent">
-                      <Link href="/listings/create" className="flex flex-col p-6 h-fit text-xs">
-                        <Plus className="h-4 w-4" />
-                        Create Listing
-                      </Link>
-                    </DropdownMenuItem>
+                    {NAV_ITEMS.map((item) => (
+                      <DropdownMenuItem
+                        key={item.href}
+                        asChild
+                        className={item.isAction ? "border-2 border-dashed hover:bg-accent hover:border-accent hover:border-solid" : undefined}
+                      >
+                        <Link href={item.href} className="relative flex flex-col p-6 h-fit text-sm">
+                          <item.icon className="h-4 w-4" />
+                          {item.label}
+                          {item.showBadge && unreadCount > 0 && (
+                            <Badge variant="ghost" className="absolute top-2 right-2 ml-auto rounded-full w-5 h-5">
+                              {unreadCount}
+                            </Badge>
+                          )}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))}
                   </div>
                   <DropdownMenuSeparator />
                   <DropdownMenuItem
                     onClick={() => signOut({ callbackUrl: "/" })}
-                    className="cursor-pointer text-center w-full justify-center mt-3 text-xs"
+                    className="cursor-pointer text-center w-full justify-center mt-3 text-sm"
                   >
                     <LogOut /> Sign Out
                   </DropdownMenuItem>

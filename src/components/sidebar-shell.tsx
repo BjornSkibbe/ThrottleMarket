@@ -34,10 +34,10 @@ export function SidebarShell({
 }: SidebarShellProps) {
   return (
     <Sidebar>
-      <SidebarContent className={cn("px-6 pt-12", transparent && "bg-transparent", className)}>
+      <SidebarContent className={cn("px-6 pt-6", transparent && "bg-transparent", className)}>
         <Card
           className={cn(
-            "gap-12 rounded-none overflow-y-auto [&::-webkit-scrollbar]:hidden",
+            "bg-transparent gap-6 rounded-none overflow-y-auto [&::-webkit-scrollbar]:hidden",
             transparent ? "bg-transparent" : "min-h-[calc(100vh-70px)]",
             cardClassName
           )}

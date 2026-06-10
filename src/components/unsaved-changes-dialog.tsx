@@ -30,11 +30,11 @@ export function UnsavedChangesDialog({
             {DIALOG_TEXT.unsavedChanges.description}
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter>
+        <DialogFooter className="flex-col sm:flex-col">
           <Button variant="secondary" size="lg" onClick={() => onOpenChange(false)}>
             <Edit />{BUTTON_TEXT.keepEditing}
           </Button>
-          <Button variant="accent" size="lg" onClick={onConfirm}>
+          <Button variant="default" size="lg" onClick={onConfirm}>
             <Check />{BUTTON_TEXT.discardChanges}
           </Button>
         </DialogFooter>

@@ -1,6 +1,7 @@
 "use client"
 
 import Link from "next/link"
+import { signOut } from "next-auth/react"
 import { LayoutDashboard, Package, Heart, Eye, LogOut, PackageCheck, Plus, Crown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { StatCard } from "@/components/stat-card"
@@ -81,15 +82,13 @@ export function DashboardSidebar({
         </Button>
         {/* Sign Out */}
         <Button
-          asChild
           variant="secondary"
           size="lg"
           className="w-full justify-start gap-3"
+          onClick={() => signOut({ callbackUrl: "/" })}
         >
-          <Link href="/auth/signout">
-            <LogOut className="h-5 w-5" />
-            Sign out
-          </Link>
+          <LogOut className="h-5 w-5" />
+          Sign out
         </Button>
         </div>
       </div>

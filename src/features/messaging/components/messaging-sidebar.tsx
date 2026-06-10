@@ -19,7 +19,6 @@ export function MessagingSidebar({
       title="Messages"
       description="Manage your conversations"
       transparent
-      className="px-3 md:px-6 py-12"
       cardClassName="h-screen"
     >
       <ConversationList

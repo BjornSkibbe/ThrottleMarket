@@ -1,44 +1,35 @@
-import { Model, Type, Brand } from "@/types"
+import { Model, Type } from "@/types"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Bike } from "lucide-react"
-import { useEffect } from "react"
-import { FORM_LABELS, FORM_PLACEHOLDERS, REQUIRED_FIELD_INDICATOR, FORM_VALIDATION } from "@/lib/constants/form"
+import { useEffect, useCallback, useMemo } from "react"
+import { FORM_LABELS, FORM_PLACEHOLDERS, FORM_VALIDATION } from "@/lib/constants/form"
 import { BRAND_TO_MODELS, MODEL_TO_TYPE } from "@/lib/constants"
 import { formatModel, formatType } from "@/lib/formatters"
+import { useListingFormContext } from "@/features/listings/contexts/listing-form-context"
 
-interface MotorcycleDetailsFieldsProps {
-  brand: Brand | ""
-  model: Model | ""
-  setModel: (value: Model | "") => void
-  type: Type | ""
-  setType: (value: Type | "") => void
-  year: string
-  setYear: (value: string) => void
-  mileage: string
-  setMileage: (value: string) => void
-  engineSize: string
-  setEngineSize: (value: string) => void
-}
+export function MotorcycleDetailsFields() {
+  const { formData, setFormData } = useListingFormContext()
 
-export function MotorcycleDetailsFields({
-  brand,
-  model,
-  setModel,
-  type,
-  setType,
-  year,
-  setYear,
-  mileage,
-  setMileage,
-  engineSize,
-  setEngineSize,
-}: MotorcycleDetailsFieldsProps) {
+  const brand = formData.brand
+  const model = formData.model
+  const type = formData.type
+  const year = formData.year
+  const mileage = formData.mileage
+  const engineSize = formData.engineSize
+
+  const setModel = useCallback((value: Model | "") => setFormData((prev) => ({ ...prev, model: value })), [setFormData])
+  const setType = useCallback((value: Type | "") => setFormData((prev) => ({ ...prev, type: value })), [setFormData])
+  const setYear = (value: string) => setFormData((prev) => ({ ...prev, year: value }))
+  const setMileage = (value: string) => setFormData((prev) => ({ ...prev, mileage: value }))
+  const setEngineSize = (value: string) => setFormData((prev) => ({ ...prev, engineSize: value }))
+
   // Get available models based on selected brand
-  const availableModels = brand && BRAND_TO_MODELS[brand] 
-    ? BRAND_TO_MODELS[brand] 
-    : []
+  const availableModels = useMemo(
+    () => (brand && BRAND_TO_MODELS[brand] ? BRAND_TO_MODELS[brand] : []),
+    [brand]
+  )
 
   // Reset model when brand changes
   useEffect(() => {
@@ -54,7 +45,7 @@ export function MotorcycleDetailsFields({
     } else if (!model) {
       setType("")
     }
-  }, [model])
+  }, [model, setType])
 
   // Reset model if brand changes and current model is not in new brand's models
   const handleModelChange = (value: Model | "") => {

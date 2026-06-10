@@ -7,51 +7,31 @@ import { NumberInput } from "@/components/ui/number-input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useListingFormContext } from "@/features/listings/contexts/listing-form-context"
 
-interface ListingDetailsFieldsProps {
-  category: Category | ""
-  setCategory: (value: Category | "") => void
-  condition: Condition | ""
-  setCondition: (value: Condition | "") => void
-  price: string
-  setPrice: (value: string) => void
-  title: string
-  setTitle: (value: string) => void
-  description: string
-  setDescription: (value: string) => void
-  brand: Brand | ""
-  setBrand: (value: Brand | "") => void
-  location: Location | ""
-  setLocation: (value: Location | "") => void
-  size: Size | ""
-  setSize: (value: Size | "") => void
-  status: ListingStatus | ""
-  setStatus: (value: ListingStatus | "") => void
-  mode: "create" | "edit"
-}
+export function ListingDetailsFields() {
+  const { formData, setFormData, mode } = useListingFormContext()
 
-export function ListingDetailsFields({
-  category,
-  setCategory,
-  condition,
-  setCondition,
-  price,
-  setPrice,
-  title,
-  setTitle,
-  description,
-  setDescription,
-  brand,
-  setBrand,
-  location,
-  setLocation,
-  size,
-  setSize,
-  status,
-  setStatus,
-  mode,
-}: ListingDetailsFieldsProps) {
-  
+  const category = formData.category
+  const condition = formData.condition
+  const price = formData.price
+  const title = formData.title
+  const description = formData.description
+  const brand = formData.brand
+  const location = formData.location
+  const size = formData.size
+  const status = formData.status
+
+  const setCategory = (value: Category | "") => setFormData((prev) => ({ ...prev, category: value }))
+  const setCondition = (value: Condition | "") => setFormData((prev) => ({ ...prev, condition: value }))
+  const setPrice = (value: string) => setFormData((prev) => ({ ...prev, price: value }))
+  const setTitle = (value: string) => setFormData((prev) => ({ ...prev, title: value }))
+  const setDescription = (value: string) => setFormData((prev) => ({ ...prev, description: value }))
+  const setBrand = (value: Brand | "") => setFormData((prev) => ({ ...prev, brand: value }))
+  const setLocation = (value: Location | "") => setFormData((prev) => ({ ...prev, location: value }))
+  const setSize = (value: Size | "") => setFormData((prev) => ({ ...prev, size: value }))
+  const setStatus = (value: ListingStatus | "") => setFormData((prev) => ({ ...prev, status: value }))
+
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

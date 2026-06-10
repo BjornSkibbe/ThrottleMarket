@@ -6,40 +6,10 @@ import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Camera } from "lucide-react"
 import { formatModel } from "@/lib/formatters"
-import { Location, Category, Condition, Brand, Type, Model } from "@/types"
+import type { DashboardListing } from "@/features/dashboard/lib/types"
 
 interface MyListingsCardProps {
-  listing: {
-    id: string
-    title: string | null
-    description: string
-    category: Category
-    price: number
-    brand: Brand
-    condition: Condition
-    location: Location
-    status: string
-    createdAt: Date
-    seller: {
-      id: string
-      name: string | null
-      email: string
-      image: string | null
-    }
-    images: {
-      id: string
-      url: string
-      order: number
-      listingId: string
-    }[]
-    motorcycle?: {
-      mileage: number | null
-      year: number | null
-      model: Model
-      type: Type
-      engineSize: number | null
-    } | null
-  }
+  listing: DashboardListing
 }
 
 export function MyListingsCard({ listing }: MyListingsCardProps) {

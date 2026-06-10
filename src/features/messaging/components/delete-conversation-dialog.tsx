@@ -26,17 +26,17 @@ export function DeleteConversationDialog({
 }: DeleteConversationDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[calc(100%-1.5rem)] sm:max-w-2xl rounded-4xl p-6 gap-0">
+      <DialogContent className="max-w-[calc(100%-1.5rem)] sm:max-w-lg rounded-4xl p-6 ring-0">
         <DialogHeader className="flex">
-          <DialogTitle className="flex items-center gap-2 text-accent">
-            <AlertTriangle className="h-5 w-5 text-accent" />
+          <DialogTitle className="flex items-center gap-2">
+            <AlertTriangle className="h-5 w-5" />
             Delete Conversation?
           </DialogTitle>
           <DialogDescription className="text-sm tracking-wide">
             This action cannot be undone. The conversation and all its messages will be permanently removed.
           </DialogDescription>
         </DialogHeader>
-        <DialogFooter className="flex flex-row gap-2 bg-transparent border-none">
+        <DialogFooter className="flex flex-row gap-6 bg-transparent">
           <Button
             variant="secondary"
             size="lg"

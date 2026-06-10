@@ -19,7 +19,8 @@ A modern full-stack motorcycle and riding gear marketplace built with Next.js, T
 
 ## Tech Stack
 
-- **Framework**: Next.js 16 (App Router)
+- **Framework**: Next.js 15 (App Router)
+- **React**: 19
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **UI Components**: ShadCN UI
@@ -68,7 +69,6 @@ UPLOADTHING_TOKEN="your-uploadthing-token"
 4. Copy the URI format and replace `[YOUR-PASSWORD]` with your database password
 5. Add the DATABASE_URL to your `.env` file
 
-See `ENV_SETUP.md` for detailed database setup instructions.
 
 4. Generate Prisma client:
 ```bash
@@ -101,31 +101,62 @@ npm run dev
 ```
 throttle-market/
 ├── prisma/
-│   ├── schema.prisma          # Database schema
-│   └── seed.ts               # Seed data
+│   ├── schema.prisma         # Database schema
+│   ├── seed.ts               # Seed data
+│   └── migrations/           # Database migrations
 ├── src/
 │   ├── app/                  # Next.js App Router
-│   │   ├── api/              # API routes
-│   │   ├── auth/             # Authentication pages
-│   │   ├── dashboard/        # User dashboard
-│   │   ├── listings/         # Listing pages
-│   │   ├── marketplace/      # Marketplace page
-│   │   └── page.tsx          # Home page
-│   ├── components/           # React components
+│   │   ├── api/              # API routes (listings, auth, messaging, uploadthing)
+│   │   ├── auth/             # Authentication pages (signin, signup, reset-password)
+│   │   ├── listings/         # Listing detail & edit pages
+│   │   ├── marketplace/      # Marketplace browsing page
+│   │   ├── page.tsx          # Home page
+│   │   └── globals.css       # Global styles & CSS variables
+│   ├── components/           # Shared React components
 │   │   ├── ui/               # ShadCN UI components
 │   │   ├── navbar.tsx
 │   │   ├── footer.tsx
-│   │   ├── listing-card.tsx
-│   │   ├── image-gallery.tsx
-│   │   └── marketplace-filters.tsx
-│   ├── lib/                  # Utility functions
-│   │   ├── prisma.ts         # Prisma client
-│   │   ├── auth.ts           # Auth configuration
-│   │   └── utils.ts          # Utility functions
-│   └── types/                # TypeScript types
+│   │   ├── app-sidebar.tsx
+│   │   ├── empty-state.tsx
+│   │   ├── error-boundary.tsx
+│   │   ├── providers.tsx
+│   │   ├── unsaved-changes-dialog.tsx
+│   │   ├── skeleton/         # Loading skeletons
+│   │   └── form-fields/      # Reusable form field components
+│   ├── features/             # Feature-based modules (vertical slices)
+│   │   ├── auth/             # Auth hooks, components, forms
+│   │   ├── dashboard/        # Dashboard page, sidebar, stats, tables
+│   │   ├── home/             # Home page sections (hero, featured listings)
+│   │   ├── listings/         # Listing form, cards, details, image upload
+│   │   │   ├── components/
+│   │   │   ├── contexts/     # Listing form context (React Context)
+│   │   │   └── lib/          # Listing schema & validation
+│   │   ├── marketplace/      # Filters, sorting, pagination
+│   │   └── messaging/        # Chat window, conversation list, hooks
+│   ├── hooks/                # Global React hooks
+│   │   ├── use-listing-form.ts
+│   │   ├── use-marketplace-filters.ts
+│   │   ├── use-form-validation.ts
+│   │   ├── use-debounce.ts
+│   │   └── use-toast.ts
+│   ├── lib/                  # Utility functions & services
+│   │   ├── api/              # API client functions
+│   │   ├── constants/        # App constants (brands, models, form labels)
+│   │   ├── core/             # Core utilities
+│   │   ├── dashboard/        # Dashboard helpers
+│   │   ├── errors/           # Custom error classes
+│   │   ├── logger/           # Pino logging setup
+│   │   ├── middleware/       # Custom middleware
+│   │   ├── prisma.ts         # Prisma client singleton
+│   │   ├── auth.ts           # NextAuth configuration
+│   │   ├── sanitize.ts       # Content sanitization
+│   │   └── utils.ts          # General utilities
+│   └── types/                # Global TypeScript types
 │       └── index.ts
-├── ENV_SETUP.md              # Environment variables documentation
-└── package.json
+├── public/                   # Static assets (images, SVGs)
+├── package.json
+├── next.config.ts
+└── tsconfig.json
 ```
 
 ## Available Scripts
@@ -172,6 +203,7 @@ These items were listed as future enhancements and are now fully built:
 ## Coming Soon
 
 - [ ] **Seller Ratings & Reviews** — Post-transaction review system for buyers
+- [ ] **Rate Limiting & Spam Prevention** — Daily listing caps per user with admin review dashboard to prevent marketplace abuse
 
 ## What I Learned Building ThrottleMarket
 

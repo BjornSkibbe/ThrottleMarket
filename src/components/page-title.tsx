@@ -12,20 +12,16 @@ export function PageTitle({
   icon: Icon,
 }: PageHeaderProps) {
   return (
-    <div className="space-y-1 flex flex-col">
-      <div className="flex items-center gap-2">
-        {Icon && <Icon className="h-7 w-7" />}
-        
+    <div className="flex flex-col space-y-1 ">
+      <div className="flex items-center gap-3">
+        {Icon && <Icon className="h-5 w-5" />}
         <h1 className="text-4xl font-black tracking-tight">
           {title}
         </h1>
       </div>
-
-      {description && (
-        <p className="text-sm text-muted-foreground ml-8">
-          {description}
-        </p>
-      )}
+      <p className="text-sm text-muted-foreground/50 ml-8">
+        {description}
+      </p>
     </div>
   )
 }

@@ -10,13 +10,13 @@ interface StatCardProps {
 
 export function StatCard({ title, value, icon: Icon, accent = false }: StatCardProps) {
   return (
-    <Card className={`p-4 ${accent ? 'bg-accent text-background' : 'bg-muted/50'}`}>
+    <Card className={`p-4 ${accent ? 'bg-accent text-primary' : 'bg-muted/50'}`}>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-        <CardTitle className="text-sm font-bold">{title}</CardTitle>
-        <Icon className={`h-7 w-7 ${accent ? 'bg-accent text-background' : 'text-primary'}`} />
+        <CardTitle className="text-sm font-bold text-primary">{title}</CardTitle>
+        <Icon className={`h-7 w-7 ${accent ? 'bg-accent text-primary' : 'text-primary'}`} />
       </CardHeader>
       <CardContent>
-        <div className={`text-4xl font-extrabold tracking-tight ${accent ? 'bg-accent text-background' : 'text-primary'}`}>
+        <div className={`text-4xl font-extrabold tracking-tight ${accent ? 'bg-accent text-primary' : 'text-primary'}`}>
           {value}
         </div>
       </CardContent>

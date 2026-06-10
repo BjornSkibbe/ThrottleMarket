@@ -60,7 +60,7 @@ export const ListingCard = memo(function ListingCard({ listing }: ListingCardPro
           IMAGE CONTAINER 
           Displays the main image of the listing in a square aspect ratio
         */}
-        <div className="flex flex-col relative aspect-square overflow-hidden mx-auto group">
+        <div className="rounded-2xl flex flex-col relative aspect-square overflow-hidden mx-auto group">
           {mainImage ? (
             <Image
               src={mainImage.url}

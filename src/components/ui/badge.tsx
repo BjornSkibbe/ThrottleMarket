@@ -20,9 +20,9 @@ const badgeVariants = cva(
           "text-accent px-0 py-0",
         link: "text-primary underline-offset-4 hover:underline",
         active:
-          "bg-emerald-500 text-white hover:bg-emerald-600",
+          "bg-transparent text-accent",
         sold:
-        "text-rose-500",
+        "text-primary/50s",
         accent:
         "text-accent",
       },
