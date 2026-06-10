@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { queryKeys } from '@/lib/react-query/keys'
 import { logErrorWithStrategy } from '@/lib/logger/client'
 import { authService } from '@/features/auth/services/auth.service'
+import { toast } from '@/hooks/use-toast'
 import type { RegisterInput } from '@/features/auth/lib/auth.schema'
 
 export function useSignUp() {
@@ -23,6 +24,10 @@ export function useSignUp() {
     },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: queryKeys.auth.session() })
+      toast({
+        title: 'Account created successfully',
+        description: 'Please sign in with your new credentials',
+      })
       router.push('/auth/signin?registered=true')
     },
     onError: (error) => {
