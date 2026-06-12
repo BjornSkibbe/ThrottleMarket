@@ -13,11 +13,11 @@ This is a side project I'm building for fun — a playground for trying out new 
 - **User Authentication**: Secure sign-up and login with NextAuth.js
 - **Marketplace Listings**: Create, browse, and manage listings for motorcycles and riding gear
 - **Categories**: Motorcycles, Helmets, Jackets, Pants, Gloves, Boots, Parts, and Accessories
-- **Advanced Search & Filters**: Filter by category, price range, location, condition, and more
+- **Advanced Search & Filters**: Filter by category, location, condition, and more
 - **Motorcycle-Specific Details**: Make, model, year, mileage, and engine size for motorcycle listings
-- **User Dashboard**: Manage your listings, favorites, and recently viewed items
+- **User Dashboard**: Manage your listings, favorites
 - **Image Gallery**: Multiple images per listing with fullscreen viewing
-- **Premium Dark UI**: Modern, responsive design with glassmorphism effects
+- **Premium Dark UI**: Modern, responsive design
 
 ## Tech Stack
 
@@ -183,10 +183,20 @@ The application uses the following main models:
 
 ## Authentication
 
-The application uses NextAuth.js for authentication with credentials provider. Users can:
+The application uses NextAuth.js v5 (Auth.js) with a JWT session strategy and Prisma adapter for database persistence.
+
+**Supported Providers:**
+- **Credentials** — Email and password registration and sign-in with bcrypt-hashed passwords
+- **GitHub OAuth** — One-click sign-in, works for all users
+- **Google OAuth** — Configured but in Google Testing mode (contact me to be added as a test user)
+
+**Auth Features:**
 - Sign up with email and password
-- Sign in with their credentials
-- Access protected routes (dashboard, create listing)
+- Sign in with credentials or OAuth providers
+- Password reset via email token
+- Route protection for authenticated pages (dashboard, create listing, messaging)
+- Session management with JWT strategy
+- OAuth access token persistence for future API integrations
 
 ## Implemented Features (Previously Planned)
 
