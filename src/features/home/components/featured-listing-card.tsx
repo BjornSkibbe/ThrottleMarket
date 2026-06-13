@@ -99,7 +99,7 @@ export function FeaturedListingCard({ listing }: FeaturedListingCardProps) {
               </p>
             </div>
 
-            <div className="pt-3 mt-2 border-t border-border/50">
+            <div className="pt-3 mt-2">
               <p className="text-lg font-extrabold tracking-tight">
                 {formatPrice(listing.price)}
               </p>
