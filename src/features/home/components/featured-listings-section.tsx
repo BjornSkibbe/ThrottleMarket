@@ -18,7 +18,7 @@ export function FeaturedListingsSection({ listings }: FeaturedListingsSectionPro
               <h2 className="text-4xl font-extrabold tracking-tight">Featured</h2>
               <p className="text-primary/50 text-sm tracking-wide">Check out the latest additions to our marketplace</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {listings.map((listing) => (
                 <FeaturedListingCard key={listing.id} listing={listing} />
               ))}
